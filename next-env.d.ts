@@ -1,5 +1,12 @@
-/// <reference types="next" />
-/// <reference types="next/image-types/global" />
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
+    output: 'export',
+    // Optional: Add a trailing slash to all paths `/about` -> `/about/`
+    // trailingSlash: true,
+    // Optional: Change the output directory `out` -> `dist`
+    // distDir: 'dist',
+}
 
-// NOTE: This file should not be edited
-// see https://nextjs.org/docs/basic-features/typescript for more information.
+module.exports = nextConfig
