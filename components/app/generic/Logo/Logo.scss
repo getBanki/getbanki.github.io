@@ -1,0 +1,42 @@
+@import "../../../../app/globals";
+
+@mixin logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+$logo-skew: -20deg;
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  &-figure {
+    display: flex;
+
+    &-item {
+      width: 15px;
+      height: 50px;
+      margin-right: 5px;
+      background: $bg-color;
+      border-radius: 3px;
+      -webkit-transform: skew($logo-skew);
+      -moz-transform: skew($logo-skew);
+      -o-transform: skew($logo-skew);
+      transform: skew($logo-skew);
+    }
+
+  }
+
+  &-text {
+    &-fin {
+      @include logo-text;
+    }
+
+    &-list {
+      @include logo-text;
+      color: $bg-color;
+    }
+  }
+}
+
