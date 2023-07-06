@@ -1,13 +1,13 @@
 "use client"
 import React, {FC} from "react";
 import {CustomCard} from "@/components/app/generic/Custom/CustomCard/CustomCard";
-import {nanoid} from "nanoid";
 import './PageHomeContent.scss'
 import Image from "next/image";
 import {Toolbox} from "@/components/app/pages/PageHome/Toolbox/Toolbox";
 import {observer} from "mobx-react-lite";
 import toolboxStateStore from "@/components/app/lib/store/toolbox-state-store";
 import {AllLoans} from "@/components/app/lib/models/all-loans";
+import {nanoid} from "nanoid";
 
 interface IProps {
     allLoans: AllLoans[]
@@ -30,7 +30,7 @@ export const PageHomeContent: FC<IProps> = observer(({allLoans}) => {
                                 filterVal.map((loans) => (
                                     loans.place < 15 ?
                                         loans.short_description.summa.maximum_loan_amount >= Number(toolboxStateStore.valueRangeSumFrom) ?
-                                            <CustomCard loans={loans}/>
+                                            <CustomCard key={nanoid()} loans={loans}/>
                                             : null
                                         :
                                         null

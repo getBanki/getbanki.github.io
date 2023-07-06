@@ -3,8 +3,6 @@ import React from "react";
 import './HeaderApp.scss'
 import {MenuBtn} from "@/Data/DataHeaderApp";
 import {nanoid} from "nanoid";
-// @ts-ignore
-import iconLogo from '../../../public/icon-logo.svg';
 import {usePathname} from "next/navigation";
 import {Logo} from "@/components/app/generic/Logo/Logo";
 
@@ -12,7 +10,7 @@ interface IProps {
     children: React.ReactNode
 }
 
-export const HeaderApp = ({children}: IProps) => {
+export default function HeaderApp({children}: IProps) {
     const pathName = usePathname()
 
     return (
