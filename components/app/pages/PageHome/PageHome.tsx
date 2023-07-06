@@ -27,7 +27,7 @@ export const PageHome = observer(() => {
                        <div className={`page-home__desc ${rubikLight.className}`}> с нашим сервисом подбора займов, кредитов и кредитных карт</div>
                    </div>
                    <div className='page-home__img'>
-                       <Image unoptimized={true} src={gif} alt={'лучшие займы'} height={512} width={512}/>
+                       {/*<Image unoptimized={true} src={gif} alt={'лучшие займы'} height={512} width={512}/>*/}
 
                    </div>
                </div>
