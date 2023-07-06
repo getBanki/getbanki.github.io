@@ -1,6 +1,6 @@
-import {PageHome} from "@/components/app/pages/PageHome/PageHome";
+import {PageLoans} from "@/components/app/pages/PageLoans/PageLoans";
 import {getAllLoan} from "@/services/getLoans";
-import {Comparison} from "@/components/app/pages/PageHome/Comparison/Comparison";
+import {Comparison} from "@/components/app/pages/PageLoans/Comparison/Comparison";
 
 import React from "react";
 
@@ -17,7 +17,7 @@ export default async function Home() {
 
     return (
         <>
-            <PageHome allLoans={allLoans}/>
+            <PageLoans allLoans={allLoans}/>
             <Comparison />
         </>
     )

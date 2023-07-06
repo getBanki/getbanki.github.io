@@ -1,17 +1,13 @@
 @import "../../../app/globals";
 
-.drawer {
-  &-content {
-    padding: 0 1rem 1rem 1rem;
-    overflow-y: scroll!important;
-    scroll-behavior: smooth;
-  }
+
+.menu {
+  background-color: #F7F7F7 !important;
 }
-
-
 .menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active){
-  background-color: $bg-color!important;
+  background: $bg-color!important;
+  color: white!important;
 }
 .menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active){
-  background-color: $bg-color-hover!important;
+  background: $bg-color-hover!important;
 }

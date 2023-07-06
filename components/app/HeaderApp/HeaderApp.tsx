@@ -14,11 +14,11 @@ export default function HeaderApp({children}: IProps) {
     const pathName = usePathname()
 
     return (
-        <div className="drawer drawer-mobile">
-            <input id="my-drawer-2" type="checkbox" className="drawer-toggle"/>
+        <div className={`drawer ${pathName === '/' ? '' : 'lg:drawer-open'}`}>
+            <input id="my-drawer" type="checkbox" className="drawer-toggle"/>
             <div className="drawer-content">
-                <div className="flex-none sticky top-0 z-20 opacity-90 bg-base-200">
-                    <label htmlFor="my-drawer-2" className="btn btn-ghost drawer-button lg:hidden">
+                <div className="flex-none ">
+                    <label htmlFor="my-drawer" className={`btn btn-ghost drawer-button ${pathName === '/' ? '' : 'lg:hidden'}`}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                              className="inline-block w-5 h-5 stroke-current">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -30,9 +30,8 @@ export default function HeaderApp({children}: IProps) {
                 {children}
             </div>
             <div className="drawer-side">
-                <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-
-                <ul className="menu p-4 w-60  text-base-content">
+                <label htmlFor="my-drawer" className="drawer-overlay"></label>
+                <ul className="menu p-4 w-64 h-full ">
                     <Logo/>
                     {
                         MenuBtn.map((menu) => (

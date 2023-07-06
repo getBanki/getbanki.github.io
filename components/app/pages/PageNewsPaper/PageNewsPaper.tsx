@@ -2,7 +2,7 @@
 import {observer} from "mobx-react-lite";
 
 interface IPageNewsPaper {
-    data: any
+    data?: any
 }
 
 export const PageNewsPaper = observer((props: IPageNewsPaper) => {

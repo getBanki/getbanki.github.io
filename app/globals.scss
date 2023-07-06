@@ -9,10 +9,6 @@ html {
   background-color: #F7F7F7 !important;
 }
 
-.menu {
-  background-color: #F7F7F7 !important;
-}
-
 .svg-inline--fa {
   width: .8rem;
 }
@@ -56,10 +52,12 @@ html {
   &-primary {
     background-color: $bg-color;
     border-color: $bg-color;
+    color: white;
 
     &:hover {
       background-color: $bg-color-hover;
       border-color: $bg-color-hover;
+      color: white;
     }
   }
 

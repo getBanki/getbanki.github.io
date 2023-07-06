@@ -1,4 +1,4 @@
-import {PageHome} from "@/components/app/pages/PageHome/PageHome";
+import {PageLoans} from "@/components/app/pages/PageLoans/PageLoans";
 import {getAllLoan} from "@/services/getLoans";
 
 
