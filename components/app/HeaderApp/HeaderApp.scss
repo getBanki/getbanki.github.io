@@ -11,3 +11,4 @@
 .menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active){
   background: $bg-color-hover!important;
 }
+

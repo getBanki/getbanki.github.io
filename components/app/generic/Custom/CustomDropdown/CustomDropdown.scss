@@ -1,0 +1,10 @@
+@use "app/globals";
+.custom-dropdown {
+  &__btn {
+    border-color: hsl(var(--b2) / var(--tw-border-opacity)) !important;
+    font-weight: normal !important;
+    &:hover{
+      background: globals.$bg-color-hover!important;
+    }
+  }
+}

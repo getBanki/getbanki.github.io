@@ -15,28 +15,24 @@
   }
 
   &__btn {
-width: 10vw;
-height: 2vw;
+    width: 10vw;
+    height: 2vw;
     font-size: 1.5rem;
   }
 
-}
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+    gap: 5rem;
 
-@media all and (max-width: 1024px) {
+  }
 
-
-}
-
-@media all and (max-width: 768px) {
-
-}
-
-@media all and (max-width: 425px) {
-
-}
-
-@media all and (max-width: 375px) {
-
+  &__block {
+    height: 100vh;
+  }
+  &__choice{
+    padding-top: 8rem;
+  }
 }
 
 @media all and (min-width: 320px) and (max-width: 475px) {

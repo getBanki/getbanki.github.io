@@ -9,6 +9,7 @@ interface IPageHomeStateStore {
 class PageHomeStateStore implements IPageHomeStateStore {
     allLoans: AllLoans[] = []
 
+
     constructor() {
         makeAutoObservable(this)
     }
@@ -16,6 +17,7 @@ class PageHomeStateStore implements IPageHomeStateStore {
     setAllLoans(val: AllLoans[]): void {
         this.allLoans = val
     }
+
 
 }
 

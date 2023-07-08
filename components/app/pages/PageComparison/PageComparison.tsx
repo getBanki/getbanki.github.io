@@ -17,7 +17,11 @@ export const PageComparison = () => {
                     Сравните суммы, сроки, процентные ставки и другие параметры отмеченных вами финансовых продуктов.
                 </div>
             </div>
-            <TableComparison/>
+            <div className=' card page-comparison__text bg-base-100'>
+                <div className='card-body'>
+                    <TableComparison/>
+                </div>
+            </div>
         </>
 
 

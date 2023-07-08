@@ -1,25 +1,30 @@
 import {nanoid} from "nanoid";
-import React, {memo, useEffect, useState} from "react";
-import {faChartSimple, faEllipsis, faGlasses, faStar, faXmark} from "@fortawesome/free-solid-svg-icons";
+import React, {useEffect, useState} from "react";
+import {faChartSimple, faEllipsis, faGlasses, faStar, faHeart} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useLocalStorage} from "usehooks-ts";
-import {faHeart} from "@fortawesome/free-regular-svg-icons";
 import {AllLoans} from "@/components/app/lib/models/all-loans";
-
+import {observer} from "mobx-react-lite";
 
 
 interface ICustomCard {
     dataLoans: AllLoans
 }
 
-export const CustomCardTitle = memo(({dataLoans}: ICustomCard) => {
-        const [stateCheck, setStateCheck] = useState(false)
+export const CustomCardTitle = observer(({dataLoans}: ICustomCard) => {
+        const [stateCheckCompare, setStateCheckCompare] = useState(false)
+        const [stateCheckFavorites, setStateCheckFavorites] = useState(false)
         const [compareStorage, setCompareStorage] = useLocalStorage<any>('compareStorage', [])
+        const [favoritesStorage, setFavoritesStorage] = useLocalStorage<any>('favoritesStorage', [])
 
 
         const compare = () => {
-            setStateCheck(!stateCheck)
+            setStateCheckCompare(!stateCheckCompare)
             setCompareStorage([...compareStorage, dataLoans])
+        }
+        const favorites = () => {
+            setStateCheckFavorites(!stateCheckFavorites)
+            setFavoritesStorage([...favoritesStorage, dataLoans])
         }
         const deleteItem = () => {
             compareStorage.map((d: any) => {
@@ -30,16 +35,45 @@ export const CustomCardTitle = memo(({dataLoans}: ICustomCard) => {
                     setCompareStorage(afterCompare)
                 }
             })
-            setStateCheck(false)
+            setStateCheckCompare(false)
         }
-        useEffect(() => {
-            compareStorage.map((d: any) => {
+        const deleteFavorites = () => {
+            favoritesStorage.map((d: any) => {
                 if (d.title === dataLoans.title) {
-                    setStateCheck(true)
+                    const beforeCompareStorage: any = favoritesStorage
+                    delete beforeCompareStorage[favoritesStorage.indexOf(d)]
+                    const afterCompare = beforeCompareStorage.filter((d: any) => d ? d : null)
+                    setFavoritesStorage(afterCompare)
                 }
             })
+            setStateCheckCompare(false)
+            console.log(localStorage.getItem('compareStorage'))
+        }
 
-        },[])
+        useEffect(() => {
+            if (compareStorage.length === 0) {
+                setStateCheckCompare(false)
+            } else {
+                compareStorage.map((d: any) => {
+                    if (d.title === dataLoans.title) {
+                        setStateCheckCompare(true)
+                    }
+                })
+            }
+        }, [compareStorage])
+
+        useEffect(() => {
+            if (favoritesStorage.length === 0) {
+                setStateCheckFavorites(false)
+            } else {
+                favoritesStorage.map((d: any) => {
+                    if (d.title === dataLoans.title) {
+                        setStateCheckFavorites(true)
+                    }
+                })
+            }
+        }, [favoritesStorage])
+
         return (
             <div key={nanoid()} className="card-title">
                 <div key={nanoid()} className="card-title-body">
@@ -48,12 +82,28 @@ export const CustomCardTitle = memo(({dataLoans}: ICustomCard) => {
                         <div>
                             {dataLoans.title}
                         </div>
-                        <div className='card-title-body-rate'>
+                        <div className='card-title-body-rate w-full'>
                             <FontAwesomeIcon
                                 key={nanoid()}
                                 icon={faStar} style={{color: '#f48100'}}
                                 className='custom-icon'/>
                             <div className='card-title-body-rate-text'> {dataLoans.rate}</div>
+                            <div className='ml-4 '>
+                                {
+                                    stateCheckCompare ? <FontAwesomeIcon
+                                            key={nanoid()}
+                                            icon={faChartSimple}
+                                            className={'custom-icon'}/>
+                                        : null
+                                }
+                                {
+                                    stateCheckFavorites ? <FontAwesomeIcon
+                                            key={nanoid()}
+                                            icon={faHeart}
+                                            className={'custom-icon'}/>
+                                        : null
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -74,24 +124,24 @@ export const CustomCardTitle = memo(({dataLoans}: ICustomCard) => {
                             </a>
                         </li>
                         <li key={nanoid()}>
-                            <a onClick={stateCheck ? deleteItem : compare}>
+                            <a onClick={stateCheckCompare ? deleteItem : compare}>
                                 <FontAwesomeIcon
                                     key={nanoid()}
-                                    icon={stateCheck ? faXmark : faChartSimple}
-                                    className={stateCheck ? 'custom-icon-delete' : 'custom-icon'}/>
+                                    icon={faChartSimple}
+                                    className={stateCheckCompare ? 'custom-icon-delete' : 'custom-icon'}/>
                                 {
-                                    stateCheck ? ' Удалить' : ' Сравнить с другим'
+                                    stateCheckCompare ? ' Удалить' : ' Сравнить'
                                 }
 
                             </a>
                         </li>
                         <li key={nanoid()}>
-                            <a onClick={compare}>
+                            <a onClick={stateCheckFavorites ? deleteFavorites : favorites}>
                                 <FontAwesomeIcon
                                     key={nanoid()}
-                                    icon={faHeart} style={{color: '#0C8CE9'}}
-                                    className='custom-icon'/>
-                                Избранное
+                                    icon={faHeart}
+                                    className={stateCheckFavorites ? 'custom-icon-delete' : 'custom-icon'}/>
+                                {stateCheckFavorites ? ' Удалить' : ' Избранное'}
                             </a>
                         </li>
                     </ul>

@@ -18,6 +18,7 @@ export const Content: FC<IProps> = observer(({allLoans}) => {
         const filterVal = allLoans.filter((val: any) => (
             val.title.toLowerCase().includes(toolboxStateStore.valueSearchForm.toLowerCase())
         ))
+        console.log(filterVal)
 
         return (
 
@@ -29,8 +30,12 @@ export const Content: FC<IProps> = observer(({allLoans}) => {
                             filterVal.length !== 0 ?
                                 filterVal.map((loans) => (
                                     loans.place < 15 ?
-                                        loans.short_description.summa.maximum_loan_amount >= Number(toolboxStateStore.valueRangeSumFrom) ?
-                                            <CustomCard key={nanoid()} loans={loans}/>
+                                        loans.short_description.summa.maximum_loan_amount >= toolboxStateStore.valueRangeSumFrom ?
+                                            loans.short_description.term.before >= toolboxStateStore.valueRangeDayFrom ?
+
+                                                <CustomCard key={nanoid()} loans={loans}/>
+                                                :
+                                                null
                                             : null
                                         :
                                         null

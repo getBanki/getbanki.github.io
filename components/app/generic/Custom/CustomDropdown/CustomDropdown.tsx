@@ -1,8 +1,7 @@
 "use client"
-import React, {FormEventHandler, MouseEventHandler, useState} from "react";
+import React, { MouseEventHandler} from "react";
 import {nanoid} from "nanoid";
 import './CustomDropdown.scss'
-import toolboxStateStore from "@/components/app/lib/store/toolbox-state-store";
 
 interface IPosition {
     top: string
@@ -35,12 +34,12 @@ export const CustomDropdown: React.FC<IProps> = ({
 
 
     return (
-        <div>
+        <div className='custom-dropdown'>
             <label className="label">
                 <span className="label-text">{name}</span>
             </label>
             <div className="dropdown w-full">
-                <label tabIndex={0} className="btn w-full btn-outline ">{title}</label>
+                <label tabIndex={0} className="btn w-full btn-outline custom-dropdown__btn">{title}</label>
                 <ul tabIndex={0}
                     className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                     {

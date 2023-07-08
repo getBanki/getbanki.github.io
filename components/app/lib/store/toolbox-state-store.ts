@@ -4,13 +4,13 @@ import {makeAutoObservable} from 'mobx'
 interface IToolBoxStateStore {
     valueSearchForm: string
     valueRangeSumFrom: number
-    valueRangeDayFrom: string
+    valueRangeDayFrom: number
 }
 
 class ToolBoxStateStore implements IToolBoxStateStore {
     valueSearchForm = ''
     valueRangeSumFrom = 0
-    valueRangeDayFrom = '0'
+    valueRangeDayFrom = 0
 
     constructor() {
         makeAutoObservable(this)
@@ -22,7 +22,7 @@ class ToolBoxStateStore implements IToolBoxStateStore {
     setValueRangeSumFrom(val: number): void {
         this.valueRangeSumFrom = val
     }
-    setValueRangeDayFrom(val: string): void {
+    setValueRangeDayFrom(val: number): void {
         this.valueRangeDayFrom = val
     }
 

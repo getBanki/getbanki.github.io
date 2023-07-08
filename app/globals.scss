@@ -7,14 +7,6 @@ $bg-color-hover: #3e4cff;
 $br-card: 1rem;
 html {
   background-color: #F7F7F7 !important;
-}
-
-.svg-inline--fa {
-  width: .8rem;
-}
-
-.drawer-content {
-  padding: 0;
 
   &::-webkit-scrollbar {
     width: 12px;
@@ -29,7 +21,14 @@ html {
       --tw-bg-opacity: 0;
     }
   }
+}
 
+.svg-inline--fa {
+  width: .8rem;
+}
+
+.drawer-content {
+  padding: 0;
 }
 
 
@@ -146,21 +145,6 @@ html {
     display: block;
   }
 
-  &-dropdown {
-    margin-right: 1rem;
-
-    &-title {
-      font-size: .9rem;
-      margin-bottom: .5rem;
-    }
-
-    &-label {
-      min-width: 200px;
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-    }
-  }
 
   &-icon {
     color: $bg-color;
