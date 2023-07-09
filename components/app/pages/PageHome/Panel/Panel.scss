@@ -1,12 +1,22 @@
 @use "app/globals";
-.panel{
-background: globals.$bg-color;
-  &__btn{
+
+.panel {
+  background: globals.$bg-color;
+
+
+  &__btn {
     background: rgba(62, 76, 255, 0);
     border: none;
     color: white;
-    &:hover{
+
+    &:hover {
       background: rgba(0, 0, 0, 0.5);
     }
   }
+}
+@media all and (max-width: 767px) {
+  .panel {
+    display: none;
+  }
+
 }

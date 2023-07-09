@@ -18,7 +18,7 @@ export default function HeaderApp({children}: IProps) {
         <div className={`drawer ${pathName === '/' ? '' : 'lg:drawer-open'}`}>
             <input id="my-drawer" type="checkbox" className="drawer-toggle"/>
             <div className="drawer-content ">
-                <div className={`navbar sticky top-0 z-10 ${pathName === '/' ? '' : 'lg:hidden'} animate__animated animate__fadeInDown`}>
+                <div className={`navbar sticky top-0 z-20 ${pathName === '/' ? '' : 'lg:hidden'} animate__animated animate__fadeInDown`}>
                     <div className="navbar-start">
                         <label htmlFor="my-drawer" className={`btn btn-ghost drawer-button ${pathName === '/' ? '' : 'lg:hidden'}`}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
