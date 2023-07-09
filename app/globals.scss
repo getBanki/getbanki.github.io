@@ -157,6 +157,11 @@ html {
   }
 }
 
+.text{
+  &__title{
+    font-size: 3rem;
+  }
+}
 .dropdown {
   &-content {
     box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
@@ -209,8 +214,12 @@ html {
   }
 }
 
-@media all and (max-width: 768px) {
-
+@media all and (max-width: 767px) {
+  .text{
+    &__title{
+      font-size: 2rem;
+    }
+  }
 
 }
 

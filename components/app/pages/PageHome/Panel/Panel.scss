@@ -1,7 +1,6 @@
-
+@use "app/globals";
 .panel{
-  animation: bounce; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 2s;
+background: globals.$bg-color;
   &__btn{
     background: rgba(62, 76, 255, 0);
     border: none;

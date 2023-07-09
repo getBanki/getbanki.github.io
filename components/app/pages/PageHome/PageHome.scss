@@ -23,6 +23,18 @@
 
   &__block {
     height: 100vh;
+    padding-top: 12vw;
+  }
+
+}
+
+@media all and (max-width: 1023px) {
+  .page-home {
+
+    &__block {
+      height: auto;
+    }
+
   }
 
 }

@@ -24,8 +24,7 @@ export const Panel = observer(() => {
             }
         ]
         return (
-            <div className='card bg-primary p-2 fixed top-0 z-20 mt-4 left-1/2 animate__animated animate__fadeInDown'
-                 style={{marginLeft: "-230px"}}>
+            <div className='card rounded-lg panel '>
                 <div className='flex'>
                     {
                         dataPanel.map((data) => (

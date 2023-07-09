@@ -11,4 +11,6 @@
 .menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active){
   background: $bg-color-hover!important;
 }
-
+.navbar{
+  background: rgba(62, 104, 255, 0)!important;
+}

@@ -6,6 +6,7 @@ import {Rubik} from "next/font/google";
 import bankImg from '../../../../../public/bank.svg'
 import gold from '../../../../../public/gold.svg'
 import payPall from '../../../../../public/paypall.svg'
+import mortgage from '../../../../../public/mortgage.svg'
 import './ServiceBlock.scss'
 import {nanoid} from "nanoid";
 
@@ -38,23 +39,27 @@ export const ServiceBlock = observer(({nameAnchor}:IProps) => {
                 img: bankImg,
                 href: '/credit'
             },
+            {
+                title: 'Ипотеки',
+                img: mortgage,
+                href: '/credit'
+            },
         ]
 
 
         return (
                 <div id={nameAnchor} className='service-block__choice'>
-                    <div className={`text-5xl ${rubik.className} mb-8`}>
+                    <div className={`text-4xl ${rubik.className} mb-8`}>
                         Поможем с выбором
                     </div>
                     <div className='service-block__cards'>
                         {
                             dataChoice.map((data) => (
-                                <a key={nanoid()} href={data.href} className='card bg-base-100 shadow-xl  choice-card'>
+                                <a key={nanoid()} href={data.href} className='card bg-base-100 service-block__card shadow-xl choice-card'>
                                     <div className='card-body'>
                                         <div className='mx-auto text-center '>
                                             <div className={`${rubikLight.className} mb-4 text-3xl`}>{data.title}</div>
-                                            <Image className='mx-auto' src={data.img} alt={data.title} height={124}
-                                                   width={248}/>
+                                            <Image className='mx-auto' src={data.img} alt={data.title} />
                                         </div>
 
                                     </div>

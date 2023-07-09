@@ -16,7 +16,7 @@ export const PageHome = observer(() => {
 
         return (
             <div className='page-home animation'>
-                <Panel/>
+
                 <Element name={'AdBlock'}>
                     <div className='page-home__block'>
                         <AdBlock nameAnchor={'AdBlock'}/>

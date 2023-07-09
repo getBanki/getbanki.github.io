@@ -1,0 +1,8 @@
+.opportunity-block {
+  &__card {
+    display: grid;
+    grid-template-columns: auto auto ;
+    max-width: 49rem;
+    margin-bottom: 1rem;
+  }
+}

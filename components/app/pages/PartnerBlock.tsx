@@ -24,16 +24,15 @@ export const PartnerBlock = observer(({nameAnchor}: IProps) => {
 
         return (
             <div id={nameAnchor} >
-                <div className={`text-5xl ${rubik.className} mb-8`}>
+                <div className={`text-4xl ${rubik.className} mb-8`}>
                     Все в одном месте
                 </div>
-                <div className={`text-5xl ${rubikLight.className} mb-8`}>
+                <div className={`text-2xl ${rubikLight.className} mb-8`}>
                     На платформе
                     собраны выгодные предложения
                     от различных партнеров. С нами ты сможешь сделать правильный выбор!
                 </div>
-                <Image className='mx-auto' src={all} alt={'check'} height={1024}
-                       width={1024}/>
+                <Image className='mx-auto' src={all} alt={'check'}/>
             </div>
         )
     }

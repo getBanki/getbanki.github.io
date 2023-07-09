@@ -4,7 +4,7 @@
   }
   &__cards {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     gap: 1rem;
   }
 }
@@ -13,8 +13,11 @@
   .service-block{
 
     &__cards {
-      grid-template-columns: auto ;
+      grid-template-columns: auto auto ;
     }
+    //&__card{
+    //  width: 12rem;
+    //}
   }
 
 }

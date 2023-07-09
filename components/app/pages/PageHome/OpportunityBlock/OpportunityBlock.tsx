@@ -4,7 +4,7 @@ import {observer} from "mobx-react-lite";
 import Image from "next/image";
 import {Rubik} from "next/font/google";
 import check from '../../../../../public/Check.svg'
-
+import './OpportunityBlock.scss'
 import {nanoid} from "nanoid";
 
 
@@ -49,17 +49,19 @@ export const OpportunityBlock = observer(({nameAnchor}: IProps) => {
         ]
 
         return (
-            <div id={nameAnchor}>
-                <div className={`text-5xl ${rubik.className} mb-8`}>
+            <div id={nameAnchor} className='opportunity-block'>
+                <div className={`text-4xl ${rubik.className} mb-8`}>
                     Выбирая нас, вы получите:
                 </div>
                 <div className='card bg-base-100 '>
                     <div className='card-body'>
-                        <div className='page-home__cards'>
+                        <div >
                             {
                                 dataAdvantages.map((data) => (
-                                    <div key={nanoid()}>
-                                        <Image className='mx-auto' src={check} alt={'check'}/>
+                                    <div  className='opportunity-block__card' key={nanoid()}>
+                                   <div>
+                                       <Image  src={check} alt={'check'}/>
+                                   </div>
                                         <div>
                                             <div className={rubik.className}>
                                                 {data.title}
