@@ -23,7 +23,10 @@
 
   &__block {
     height: 100vh;
-padding-top: 10rem;
+//padding-top: 10rem;
+  }
+  &__m{
+    margin-bottom: 10rem;
   }
 
 }
@@ -31,9 +34,7 @@ padding-top: 10rem;
 @media all and (max-width: 1023px) {
   .page-home {
 
-    &__block {
-      height: auto;
-    }
+
 
   }
 

@@ -1,23 +1,23 @@
-.service-block{
-  &__choice{
-margin: auto 0;
+.service-block {
+  &__choice {
+    margin: auto 0;
   }
+
   &__cards {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
     gap: 1rem;
+
   }
 }
 
 @media all and (max-width: 1023px) {
-  .service-block{
+  .service-block {
 
-    &__cards {
-      grid-template-columns: auto auto ;
+
+    &__card{
+
     }
-    //&__card{
-    //  width: 12rem;
-    //}
   }
 
 }

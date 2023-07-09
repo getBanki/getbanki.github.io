@@ -19,21 +19,22 @@ export const PageHome = observer(() => {
 
                 <Element name={'AdBlock'}>
                     <div className='page-home__block'>
+
                         <AdBlock nameAnchor={'AdBlock'}/>
                     </div>
                 </Element>
                 <Element name={'ServiceBlock'}>
-                    <div className='page-home__block'>
+                    <div className='page-home__m'>
                         <ServiceBlock nameAnchor={'ServiceBlock'}/>
                     </div>
                 </Element>
                 <Element name={'OpportunityBlock'}>
-                    <div className='page-home__block'>
+                    <div className='page-home__m'>
                         <OpportunityBlock nameAnchor={'OpportunityBlock'}/>
                     </div>
                 </Element>
                 <Element name={'PartnerBlock'}>
-                    <div className='page-home__block'>
+                    <div className='page-home__m'>
                         <PartnerBlock nameAnchor={'PartnerBlock'}/>
                     </div>
                 </Element>

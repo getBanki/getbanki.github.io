@@ -60,7 +60,7 @@ export const OpportunityBlock = observer(({nameAnchor}: IProps) => {
                                 dataAdvantages.map((data) => (
                                     <div  className='opportunity-block__card' key={nanoid()}>
                                    <div>
-                                       <Image  src={check} alt={'check'}/>
+                                       <Image  src={check} alt={'check'} height={48} width={48}/>
                                    </div>
                                         <div>
                                             <div className={rubik.className}>
