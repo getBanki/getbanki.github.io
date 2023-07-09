@@ -1,0 +1,20 @@
+.service-block{
+  &__choice{
+    padding-top: 8rem;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+  }
+}
+
+@media all and (max-width: 1023px) {
+  .service-block{
+
+    &__cards {
+      grid-template-columns: auto ;
+    }
+  }
+
+}

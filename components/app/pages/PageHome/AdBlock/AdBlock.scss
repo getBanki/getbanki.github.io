@@ -1,0 +1,11 @@
+.ad-block{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+}
+
+@media all and (min-width: 1140px)  {
+  .ad-block{
+    margin-left: 1rem;
+  }
+}

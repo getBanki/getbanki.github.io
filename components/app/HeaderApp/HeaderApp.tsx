@@ -5,7 +5,7 @@ import {MenuBtn} from "@/Data/DataHeaderApp";
 import {nanoid} from "nanoid";
 import {usePathname} from "next/navigation";
 import {Logo} from "@/components/app/generic/Logo/Logo";
-
+import 'animate.css';
 interface IProps {
     children: React.ReactNode
 }

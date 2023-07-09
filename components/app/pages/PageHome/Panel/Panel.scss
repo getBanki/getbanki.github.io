@@ -1,0 +1,13 @@
+
+.panel{
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s;
+  &__btn{
+    background: rgba(62, 76, 255, 0);
+    border: none;
+    color: white;
+    &:hover{
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
