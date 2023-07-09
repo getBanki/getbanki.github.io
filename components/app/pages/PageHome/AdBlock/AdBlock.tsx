@@ -23,7 +23,7 @@ export const AdBlock = observer(({nameAnchor}: IProps) => {
 
 
         return (
-            <div id={nameAnchor} className='ad-block'>
+            <div id={nameAnchor} className='ad-block '>
                 <div className='ad-block__text animate__animated animate__fadeInLeft'>
                     <div className={`ad-block__slogan ${rubik.className}`}> Я экономлю время и деньги</div>
                     <div className={`ad-block__desc ${rubikLight.className}`}> с сервисом подбора займа, кредита и

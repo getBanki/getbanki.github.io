@@ -9,6 +9,8 @@ import {AdBlock} from "@/components/app/pages/PageHome/AdBlock/AdBlock";
 import {OpportunityBlock} from "@/components/app/pages/PageHome/OpportunityBlock/OpportunityBlock";
 import {ServiceBlock} from "@/components/app/pages/PageHome/ServiceBlock/ServiceBlock";
 import {PartnerBlock} from "@/components/app/pages/PartnerBlock";
+import Image from "next/image";
+import prew from "@/public/arrow-down.svg";
 
 
 export const PageHome = observer(() => {
@@ -19,7 +21,6 @@ export const PageHome = observer(() => {
 
                 <Element name={'AdBlock'}>
                     <div className='page-home__block'>
-
                         <AdBlock nameAnchor={'AdBlock'}/>
                     </div>
                 </Element>

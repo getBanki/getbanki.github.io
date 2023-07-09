@@ -1,19 +1,20 @@
 .ad-block{
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 1rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  //align-items: center;
   &__text {
     margin: auto 0 auto 1rem;
     max-width: 50vw;
   }
 
   &__slogan {
-    font-size: 3.3vw;
+    font-size: 2.5vw;
     font-weight: 900;
   }
 
   &__desc {
-    font-size: 3.5vw;
+    font-size: 2.5vw;
     font-weight: 300;
   }
 
@@ -27,9 +28,7 @@
 @media all and (max-width: 768px)  {
   .ad-block{
 
-    display: grid;
-    grid-template-columns: auto;
-    gap: 1rem;
+
     &__img{
       display: none;
     }
@@ -37,7 +36,7 @@
      max-width: none;
     }
     &__slogan {
-      font-size: 1.7rem;
+      font-size: 2rem;
       font-weight: 900;
     }
     &__desc {
