@@ -34,7 +34,7 @@ export const CustomDropdown: React.FC<IProps> = ({
 
 
     return (
-        <div className='custom-dropdown'>
+        <div className='custom-dropdown w-full max-w-md'>
             <label className="label">
                 <span className="label-text">{name}</span>
             </label>

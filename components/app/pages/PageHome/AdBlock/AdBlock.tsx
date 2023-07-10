@@ -43,7 +43,7 @@ export const AdBlock = observer(({nameAnchor}: IProps) => {
                     <a href={'/loans'} className="btn btn-primary ad-block__btn mt-6">Начать!</a>
                 </div>
                 <div className='ad-block__img w-full animate__animated animate__fadeInRight'>
-                    <Image src={prew} alt={'лучшие займы'} />
+                    <Image priority={true} src={prew} alt={'лучшие займы'} />
                 </div>
             </div>
         )

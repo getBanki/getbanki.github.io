@@ -24,10 +24,10 @@ export const Toolbox = observer(() => {
         }
         const rangeSum: number[] = [100, 1000, 5000, 10000, 20000, 30000, 50000, 60000, 100000]
         const rangeDay: number[] = [1, 7, 14, 20, 30, 60, 120, 240, 360]
-console.log(toolboxStateStore.valueRangeDayFrom)
+        console.log(toolboxStateStore.valueRangeDayFrom)
         return (
 
-            <div className='toolbox rounded-2xl bg-base-100 card mt-6 mb-3 shadow-xl sticky top-0 z-20'>
+            <div className='toolbox rounded-2xl bg-base-100 card mt-6 mb-3 shadow-md'>
                 <div className='card-body'>
                     <div className='toolbox__visible'>
                         <CustomInput title={'Поиск по МФО'}

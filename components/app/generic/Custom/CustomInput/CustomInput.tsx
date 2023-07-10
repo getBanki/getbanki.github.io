@@ -26,8 +26,8 @@ export const CustomInput: FC<IProps> = (
 
 
     return (
-        <div id={title} className="form-control w-full max-w-xs">
-            <label className="label">
+        <div id={title} className="form-control w-full max-w-md">
+            <label className="label ">
                 <span className="label-text">{title}</span>
             </label>
             <input
@@ -35,7 +35,7 @@ export const CustomInput: FC<IProps> = (
                 max={maxRange}
                 value={value} onChange={onChange} type={type ? type : 'text'}
                 placeholder={title}
-                className={`${!type ? 'input input-bordered' : 'py-4'} w-full max-w-xs`}/>
+                className={`${!type ? 'input input-bordered' : 'py-4'} w-full max-w-md`}/>
         </div>
     )
 }

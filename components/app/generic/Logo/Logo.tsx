@@ -6,8 +6,8 @@ import {nanoid} from "nanoid";
 export const Logo = () => {
 
     return (
-        <a href='/' className='btn btn-ghost logo'>
-            <Image key={nanoid()} width={200} height={200} src={ '/GETBANKI.png'} alt={'get'}/>
+        <a href='/' className='btn btn-ghost no-animation logo'>
+            <Image priority={true}  width={200} height={200} src={ '/GETBANKI.png'} alt={'get'}/>
         </a>
     )
 }

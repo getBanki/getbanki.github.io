@@ -77,7 +77,7 @@ export const CustomCardTitle = observer(({dataLoans}: ICustomCard) => {
         return (
             <div key={nanoid()} className="card-title">
                 <div key={nanoid()} className="card-title-body">
-                    <img className="card-title-body-img" src={dataLoans.img} width={38} alt="займ  "/>
+                    <img  className="card-title-body-img" src={dataLoans.img} width={38} alt="займ  "/>
                     <div>
                         <div>
                             {dataLoans.title}
