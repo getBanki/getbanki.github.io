@@ -1,4 +1,4 @@
-.ad-block{
+.ad-block {
   display: grid;
   grid-template-columns: auto auto;
   height: 100vh;
@@ -6,7 +6,7 @@
 
 
   &__text {
-margin: auto 1rem;
+    margin: auto 1rem;
     max-width: 50vw;
 
   }
@@ -28,24 +28,28 @@ margin: auto 1rem;
   }
 }
 
-@media all and (max-width: 768px)  {
-  .ad-block{
+@media all and (max-width: 768px) {
+  .ad-block {
 
 
-    &__img{
+    &__img {
       display: none;
     }
-    &__text{
-     max-width: none;
+
+    &__text {
+      max-width: none;
     }
+
     &__slogan {
       font-size: 2rem;
       font-weight: 900;
     }
+
     &__desc {
       font-size: 1.8rem;
       font-weight: 300;
     }
+
     &__btn {
       width: auto;
       height: auto;

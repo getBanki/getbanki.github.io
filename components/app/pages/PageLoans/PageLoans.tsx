@@ -37,7 +37,7 @@ export const PageLoans =observer(({allLoans}: IProps) => {
                                         loans.short_description.summa.maximum_loan_amount >= toolboxStateStore.valueRangeSumFrom ?
                                             loans.short_description.term.before >= toolboxStateStore.valueRangeDayFrom ?
 
-                                                        <CustomCard loans={loans}/>
+                                                        <CustomCard key={loans.title} loans={loans}/>
                                                         :
                                                         null
 
