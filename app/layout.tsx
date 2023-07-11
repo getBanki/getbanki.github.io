@@ -17,10 +17,6 @@ interface IProps {
 export default function RootLayout({children}: IProps) {
     return (
         <html lang="ru" suppressHydrationWarning={true} data-theme="light">
-        <head>
-            <link rel="shortcut icon" href="/logo.svg" type="image/x-icon"/>
-            <title>GETBANKI</title>
-        </head>
         <body className={rubik.className}>
         <HeaderApp>
             {children}
