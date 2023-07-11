@@ -14,7 +14,7 @@ interface IProps {
     allLoans: AllLoans[]
 }
 
-export default observer(({allLoans}: IProps) => {
+export const PageLoans =observer(({allLoans}: IProps) => {
 
         const filterVal = allLoans.filter((val: any) => (
             val.title.toLowerCase().includes(toolboxStateStore.valueSearchForm.toLowerCase())
