@@ -25,7 +25,7 @@ export const CustomInput = ({value, onChange, type, title, maxRange, minRange,}:
                 max={maxRange}
                 value={value} onChange={onChange} type={type ? type : 'text'}
                 placeholder={title}
-                className={`${!type ? 'input input-bordered' : 'py-4'}  w-full max-w-md custom-input`}/>
+                className={`input  w-full max-w-md custom-input`}/>
         </div>
     )
 }
