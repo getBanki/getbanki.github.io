@@ -22,7 +22,7 @@ export const PageLoans =observer(({allLoans}: IProps) => {
 
         useEffect(() => {
             toolboxStateStore.getList(allLoans)
-        }, [])
+        }, [allLoans])
 
 
         return (
