@@ -1,5 +1,5 @@
 "use client"
-import React, { MouseEventHandler} from "react";
+import React, {MouseEventHandler} from "react";
 import {nanoid} from "nanoid";
 import './CustomDropdown.scss'
 
@@ -24,13 +24,7 @@ interface IProps {
 
 }
 
-export const CustomDropdown: React.FC<IProps> = ({
-                                                     name,
-                                                     items,
-                                                     title,
-                                                     onClick,
-                                                     onChange
-                                                 }) => {
+export const CustomDropdown = ({name, items, title, onChange}: IProps) => {
 
 
     return (
@@ -39,9 +33,10 @@ export const CustomDropdown: React.FC<IProps> = ({
                 <span className="label-text">{name}</span>
             </label>
             <div className="dropdown w-full">
-                <label tabIndex={0} className="btn w-full btn-outline custom-dropdown__btn">{title}</label>
+                <label tabIndex={0}
+                       className="btn w-full btn-outline custom-dropdown__btn">{title.length === 0 ? 'Выберите пункт' : title}</label>
                 <ul tabIndex={0}
-                    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                    className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-full max-h-96 overflow-auto z-50 block">
                     {
                         items.map((d: any) => (
                             <li key={nanoid()} onClick={onChange}

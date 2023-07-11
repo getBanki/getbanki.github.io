@@ -1,7 +1,7 @@
 import React from "react";
 import './Logo.scss'
 import Image from "next/image";
-import {nanoid} from "nanoid";
+
 
 export const Logo = () => {
 

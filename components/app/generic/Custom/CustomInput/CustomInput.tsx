@@ -1,7 +1,6 @@
 "use client"
-import React, {ChangeEventHandler, FC, memo} from "react";
-import {nanoid} from "nanoid";
-
+import React, {ChangeEventHandler} from "react";
+import './CustomInput.scss'
 
 interface IProps {
     value?: string | number
@@ -13,16 +12,7 @@ interface IProps {
 
 }
 
-export const CustomInput: FC<IProps> = (
-    {
-        value,
-        onChange,
-        type,
-        title,
-        maxRange,
-        minRange,
-    }
-) => {
+export const CustomInput = ({value, onChange, type, title, maxRange, minRange,}: IProps) => {
 
 
     return (
@@ -35,7 +25,7 @@ export const CustomInput: FC<IProps> = (
                 max={maxRange}
                 value={value} onChange={onChange} type={type ? type : 'text'}
                 placeholder={title}
-                className={`${!type ? 'input input-bordered' : 'py-4'} w-full max-w-md`}/>
+                className={`${!type ? 'input input-bordered' : 'py-4'}  w-full max-w-md custom-input`}/>
         </div>
     )
 }

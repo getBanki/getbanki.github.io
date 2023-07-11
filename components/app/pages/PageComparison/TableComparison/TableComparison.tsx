@@ -39,9 +39,9 @@ export const TableComparison = () => {
         if (typeof window !== 'undefined') {
             setDataCompare(compareStorage)
         }
-        console.log(dataCompare)
+        // console.log(dataCompare)
         const startTime = performance.now();
-        console.log(sumArray([1, [1, [2]], 2]))
+        // console.log(sumArray([1, [1, [2]], 2]))
         // const endTime = performance.now();
         // const executionTime = endTime - startTime;
         // console.log(`Время выполнения: ${executionTime} мс`);
@@ -69,7 +69,7 @@ export const TableComparison = () => {
                     <tbody>
                     {
                         dataCompare.map((data: any) => (
-                                <tr key={nanoid()}>
+                                <tr key={data.title}>
                                     <th className='z-50'>
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12">

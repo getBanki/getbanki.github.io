@@ -3,7 +3,6 @@ import React from "react";
 import {observer} from "mobx-react-lite";
 import Image from "next/image";
 import {Rubik} from "next/font/google";
-import prew from '../../../../../public/prew.svg'
 import './AdBlock.scss'
 
 const rubik = Rubik({
@@ -15,15 +14,12 @@ const rubikLight = Rubik({
     subsets: ['latin'],
 })
 
-interface IProps {
-    nameAnchor: string
-}
 
-export const AdBlock = observer(({nameAnchor}: IProps) => {
+export default observer(() => {
 
-
+    // animate__animated animate__fadeInLeft
         return (
-            <div id={nameAnchor} className='ad-block '>
+            <div className='ad-block'>
                 <div className='ad-block__text animate__animated animate__fadeInLeft'>
                     <div className={`ad-block__slogan ${rubik.className}`}> Я экономлю время и деньги</div>
                     <div className={`ad-block__desc ${rubikLight.className}`}> с сервисом подбора займа, кредита и
@@ -43,7 +39,7 @@ export const AdBlock = observer(({nameAnchor}: IProps) => {
                     <a href={'/loans'} className="btn btn-primary ad-block__btn mt-6">Начать!</a>
                 </div>
                 <div className='ad-block__img w-full animate__animated animate__fadeInRight'>
-                    <Image priority={true} src={prew} alt={'лучшие займы'} />
+                    <Image priority={true} src={'/prew.svg'} alt={'лучшие займы'} width={509} height={449}/>
                 </div>
             </div>
         )

@@ -6,12 +6,7 @@ import {BorrowerRequirements} from "@/components/app/lib/models/borrower-require
 
 export interface IAllLoans extends IGlobal {
     description: {
-        borrower_category: [
-                | "Безработным"
-                | "Пенсионерам"
-                | "Бизнес"
-                | "Должникам"
-        ];
+        borrower_category:string[]
         borrower_requirements: BorrowerRequirements;
         methods_obtaining: string[];
         payment_method: string[];
@@ -27,12 +22,7 @@ export interface IAllLoans extends IGlobal {
 
 export class AllLoans extends Global<IAllLoans, AllLoans> implements IAllLoans {
     description: {
-        borrower_category: [
-                | "Безработным"
-                | "Пенсионерам"
-                | "Бизнес"
-                | "Должникам"
-        ];
+        borrower_category: string[];
         borrower_requirements: BorrowerRequirements;
         methods_obtaining: string[];
         payment_method: string[];

@@ -17,6 +17,11 @@ interface IProps {
 export default function RootLayout({children}: IProps) {
     return (
         <html lang="ru" suppressHydrationWarning={true} data-theme="light">
+        <head>
+            <link rel="manifest" href="/manifest.json"/>
+            <link rel="shortcut icon" href="/logo.svg" type="image/x-icon"/>
+            <meta name="theme-color" content="#fff" />
+        </head>
         <body className={rubik.className}>
         <HeaderApp>
             {children}
