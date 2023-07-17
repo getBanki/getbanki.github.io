@@ -19,7 +19,6 @@ export default function RootLayout({children}: IProps) {
         <html lang="ru" suppressHydrationWarning={true} data-theme="light">
         <head>
             <link rel="shortcut icon" href="/logo.svg" type="image/x-icon"/>
-            <link rel="manifest" href="/site.webmanifest" />
         </head>
         <body className={rubik.className}>
         <HeaderApp>
