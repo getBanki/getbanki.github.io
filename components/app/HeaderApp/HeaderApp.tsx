@@ -1,7 +1,6 @@
 'use client';
 import React from "react";
 import './HeaderApp.scss'
-import {MenuBtn} from "@/Data/DataHeaderApp";
 import {nanoid} from "nanoid";
 import {usePathname} from "next/navigation";
 import {Logo} from "@/components/app/generic/Logo/Logo";
@@ -14,6 +13,21 @@ interface IProps {
 
 export default observer(({children}: IProps) =>{
     const pathName = usePathname()
+
+    const MenuBtn = [
+        {
+            title: 'Займы',
+            href: '/loans',
+        },
+        {
+            title: 'Кредитные карты',
+            href: '/creditCard',
+        },
+        {
+            title: 'Статьи',
+            href: '/newPaper',
+        },
+    ]
 
     return (
         <div className={`drawer ${pathName === '/' ? '' : 'lg:drawer-open'}`}>

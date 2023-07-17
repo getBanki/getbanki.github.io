@@ -5,7 +5,7 @@ import './PageHome.scss'
 import {Element} from "react-scroll";
 import {OpportunityBlock} from "@/components/app/pages/PageHome/OpportunityBlock/OpportunityBlock";
 import {ServiceBlock} from "@/components/app/pages/PageHome/ServiceBlock/ServiceBlock";
-import {PartnerBlock} from "@/components/app/pages/PartnerBlock";
+import {PartnerBlock} from "@/components/app/pages/PageHome/PartnerBlock/PartnerBlock";
 import AdBlock from "@/components/app/pages/PageHome/AdBlock/AdBlock";
 import {nanoid} from "nanoid";
 

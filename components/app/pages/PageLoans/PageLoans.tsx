@@ -14,11 +14,20 @@ interface IProps {
     allLoans: AllLoans[]
 }
 
-export const PageLoans =observer(({allLoans}: IProps) => {
+export const PageLoans = observer(({allLoans}: IProps) => {
 
-        const filterVal = allLoans.filter((val: any) => (
-            val.title.toLowerCase().includes(toolboxStateStore.valueSearchForm.toLowerCase())
-        ))
+         const filterVal = (array: AllLoans[]) => {
+            return array.filter((obj: AllLoans) => {
+                const matchTitle = obj.title.toLowerCase().includes(toolboxStateStore.valueSearchForm.toLowerCase());
+                const matchLoanAmount = obj.short_description.summa.maximum_loan_amount >= toolboxStateStore.valueRangeSumFrom ? obj : null
+                const matchLoanDay = obj.short_description.term.before >= toolboxStateStore.valueRangeDayFrom ? obj : null
+                const matchMethodObtaining = toolboxStateStore.valueMethodObtaining.length !== 0 ? obj.description.methods_obtaining.includes(toolboxStateStore.valueMethodObtaining) : obj
+                const matchDocuments = toolboxStateStore.valueDocuments.length !== 0 ? obj.description.borrower_requirements.documents.includes(toolboxStateStore.valueDocuments) : obj
+                const matchBorrowers = toolboxStateStore.valueCategoryBorrowers.length !== 0 ? obj.description.borrower_category.includes(toolboxStateStore.valueCategoryBorrowers) : obj
+
+                return matchTitle && matchLoanAmount && matchLoanDay && matchMethodObtaining && matchDocuments && matchBorrowers
+            });
+        }
 
         useEffect(() => {
             toolboxStateStore.getList(allLoans)
@@ -31,19 +40,9 @@ export const PageLoans =observer(({allLoans}: IProps) => {
                     <Toolbox/>
                     <div className='page-loans__content '>
                         {
-                            filterVal.length !== 0 ?
-                                filterVal.map((loans) => (
-                                    loans.place < 15 ?
-                                        loans.short_description.summa.maximum_loan_amount >= toolboxStateStore.valueRangeSumFrom ?
-                                            loans.short_description.term.before >= toolboxStateStore.valueRangeDayFrom ?
-
-                                                        <CustomCard key={loans.title} loans={loans}/>
-                                                        :
-                                                        null
-
-                                            : null
-                                        :
-                                        null
+                            filterVal(allLoans).length !== 0 ?
+                                filterVal(allLoans).map((loans) => (
+                                    <CustomCard key={loans.title} loans={loans}/>
                                 ))
                                 :
                                 <div className='page-loans-content__img'>
@@ -57,7 +56,4 @@ export const PageLoans =observer(({allLoans}: IProps) => {
         )
     }
 )
-
-
-
 

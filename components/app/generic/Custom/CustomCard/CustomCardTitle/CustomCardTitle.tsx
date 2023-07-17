@@ -30,7 +30,7 @@ export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
     const deleteItem = () => {
         compareStorage.map((d: any) => {
             if (d.title === dataLoans.title) {
-                setCompareStorage(DeletingObjFromArray(d,compareStorage))
+                setCompareStorage(DeletingObjFromArray(d, compareStorage))
             }
         })
         setStateCheckCompare(false)
@@ -38,7 +38,7 @@ export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
     const deleteFavorites = () => {
         favoritesStorage.map((d: any) => {
             if (d.title === dataLoans.title) {
-                setFavoritesStorage(DeletingObjFromArray(d,favoritesStorage))
+                setFavoritesStorage(DeletingObjFromArray(d, favoritesStorage))
             }
         })
         setStateCheckFavorites(false)
@@ -47,15 +47,15 @@ export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
 
     useEffect(() => {
 
-            if (compareStorage.length === 0) {
-                setStateCheckCompare(false)
-            } else {
-                compareStorage.map((d: any) => {
-                    if (d.title === dataLoans.title) {
-                        setStateCheckCompare(true)
-                    }
-                })
-            }
+        if (compareStorage.length === 0) {
+            setStateCheckCompare(false)
+        } else {
+            compareStorage.map((d: any) => {
+                if (d.title === dataLoans.title) {
+                    setStateCheckCompare(true)
+                }
+            })
+        }
 
     }, [compareStorage])
 
@@ -79,7 +79,7 @@ export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
                     <div>
                         {dataLoans.title}
                     </div>
-                    <div className='card-title-body-rate w-full'>
+                    <div className='card-title-body-rate w-full card-title__container'>
                         <FontAwesomeIcon
                             icon={faStar} style={{color: '#f48100'}}
                             className='custom-icon'/>
@@ -145,5 +145,3 @@ export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
         </div>
     )
 }
-
-

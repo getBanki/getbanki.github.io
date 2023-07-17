@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: 'Самые выгодные условия',
 }
 
-export default async function NewsPaper() {
+export default function NewsPaper() {
 
 
     return (

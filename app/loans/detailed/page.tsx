@@ -1,7 +1,4 @@
-import {PageLoans} from "@/components/app/pages/PageLoans/PageLoans";
-import {getAllLoan} from "@/services/getLoans";
-
-
+import {PageDetailed} from "@/components/app/pages/PageDetailed/PageDetailed";
 
 
 export const metadata = {
@@ -9,11 +6,10 @@ export const metadata = {
     description: 'Займ под 0%',
 }
 
-export default async function Detailed() {
+export default function Detailed() {
 
 
     return (
-       <>
-       ddd</>
+        <PageDetailed/>
     )
 }

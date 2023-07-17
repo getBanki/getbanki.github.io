@@ -29,7 +29,6 @@ export default observer(() => {
                                 <button onClick={clearForm}>Очистить</button>
                                 :
                                 null
-
                         }
                     </div>
                 </div>

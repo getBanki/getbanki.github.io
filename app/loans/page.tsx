@@ -1,4 +1,3 @@
-
 import {getAllLoan} from "@/services/getLoans";
 import {Comparison} from "@/components/app/pages/PageLoans/Comparison/Comparison";
 import React from "react";

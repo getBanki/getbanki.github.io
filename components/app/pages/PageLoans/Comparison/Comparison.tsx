@@ -23,36 +23,34 @@ export const Comparison: React.FC = () => {
     return (
 
         dataCompare.length !== 0 ?
-            <div className='animation'>
-                <div key={nanoid()} className='comparison'>
-                    <div className='card comparison__card'>
-                        <div className='comparison__body'>
-                            <div className='comparison__information'>
-                                <div key={nanoid()} className="avatar comparison__item">
-                                    <div className="w-12 rounded-xl">
-                                        <img width={50} height={50} key={nanoid()} src={dataCompare[0].img}
-                                             alt={dataCompare[0].title}/>
-                                    </div>
+            <div key={nanoid()} className='comparison animation'>
+                <div className='card comparison__card'>
+                    <div className='comparison__body'>
+                        <div className='comparison__information'>
+                            <div key={nanoid()} className="avatar comparison__item">
+                                <div className="w-12 rounded-xl">
+                                    <img width={50} height={50} key={nanoid()} src={dataCompare[0].img}
+                                         alt={dataCompare[0].title}/>
                                 </div>
-                                {
-                                    dataCompare.length - 1 === 0 ?
-                                        null
-                                        :
-                                        <div
-                                            className="comparison__item bg-stone-100	 p-3 flex align-middle items-center rounded-xl">
-                                            + {dataCompare.length - 1}
-                                        </div>
-                                }
-                                {
-                                    <div className=' comparison__item ml-3 text-white flex items-center'>
-                                        {dataCompare.length} предложения к сравнению
+                            </div>
+                            {
+                                dataCompare.length - 1 === 0 ?
+                                    null
+                                    :
+                                    <div
+                                        className="comparison__item bg-stone-100	 p-3 flex align-middle items-center rounded-xl">
+                                        + {dataCompare.length - 1}
                                     </div>
-                                }
-                            </div>
-                            <div className='comparison-card-body-btn'>
-                                <a onClick={clearing} className="btn  mr-4">Очистить</a>
-                                <a href={'/loans/comparison'} className="btn btn-primary mr-4">Сравнить</a>
-                            </div>
+                            }
+                            {
+                                <div className=' comparison__item ml-3 text-white flex items-center'>
+                                    {dataCompare.length} предложения к сравнению
+                                </div>
+                            }
+                        </div>
+                        <div className='comparison-card-body-btn'>
+                            <a onClick={clearing} className="btn  mr-4">Очистить</a>
+                            <a href={'/loans/comparison'} className="btn btn-primary mr-4">Сравнить</a>
                         </div>
                     </div>
                 </div>
