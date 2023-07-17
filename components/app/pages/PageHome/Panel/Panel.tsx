@@ -29,7 +29,7 @@ export const Panel = observer(() => {
                     {
                         dataPanel.map((data) => (
                             <Link smooth={true} to={data.nameAnchor} key={nanoid()}
-                                  className="btn btn-secondary panel__btn no-animation">{data.title}</Link>
+                                  className="btn panel__btn no-animation">{data.title}</Link>
                         ))
                     }
                 </div>
