@@ -39,6 +39,7 @@
   "devDependencies": {
     "@types/react-scroll": "^1.8.7",
     "@types/react-transition-group": "^4.4.6",
+    "next-pwa": "^5.6.0",
     "sass": "^1.62.1"
   }
 }
