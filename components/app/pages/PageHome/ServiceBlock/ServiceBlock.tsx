@@ -37,12 +37,12 @@ export const ServiceBlock = observer(({nameAnchor}:IProps) => {
             {
                 title: 'Кредита',
                 img: bankImg,
-                href: '/credit'
+                href: '/loans'
             },
             {
                 title: 'Ипотеки',
                 img: mortgage,
-                href: '/credit'
+                href: '/loans'
             },
         ]
 
