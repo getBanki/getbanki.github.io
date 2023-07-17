@@ -1,0 +1,28 @@
+.toolbox {
+  &__visible,&__invisible {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    grid-gap: 1rem;
+  }
+
+
+  &__btn {
+    margin-top: 2.2rem;
+  }
+}
+@media all and (max-width: 767px) {
+  .toolbox {
+    &__visible,&__invisible {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      grid-gap: 1rem;
+
+    }
+
+    &__btn {
+      margin-top: 2.2rem;
+    }
+  }
+
+}

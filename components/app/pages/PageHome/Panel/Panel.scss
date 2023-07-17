@@ -1,0 +1,16 @@
+@use "app/globals";
+
+.panel {
+  background: globals.$bg-color;
+
+
+  &__btn {
+    background: rgba(62, 76, 255, 0);
+    border: none;
+    color: white;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
