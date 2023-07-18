@@ -20,6 +20,7 @@ export default observer(() => {
     // animate__animated animate__fadeInLeft
         return (
             <div className='ad-block'>
+                вфывывфвфы
                 <div className='ad-block__text animate__animated animate__fadeInLeft'>
                     <div className={`ad-block__slogan ${rubik.className}`}> Я экономлю время и деньги</div>
                     <div className={`ad-block__desc ${rubikLight.className}`}> с сервисом подбора займа, кредита и
