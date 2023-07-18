@@ -5,7 +5,9 @@ import {observer} from "mobx-react-lite";
 import toolboxStateStore from "@/components/app/lib/store/toolbox-state-store";
 import {CustomDropdown} from "@/components/app/generic/Custom/CustomDropdown/CustomDropdown";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSliders} from "@fortawesome/free-solid-svg-icons";
+import {faFilter, faSliders} from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
+import './VisibleBlock.scss'
 
 
 export default observer(() => {
@@ -32,10 +34,8 @@ export default observer(() => {
                     <button onClick={onClickChange}
                             title={'Фильтр'} className={`btn ${state? 'btn-primary':''}`} >
                         <FontAwesomeIcon
-                            icon={faSliders}
-                            width={50}
+                            icon={faFilter}
                             style={{marginRight: '0'}}
-
                         />
                     </button>
                 </div>

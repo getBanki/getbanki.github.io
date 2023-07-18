@@ -5,12 +5,8 @@
 
 
   &__btn {
-    background: rgba(62, 76, 255, 0);
+    background: globals.$bg-color!important;
     border: none;
     color: white;
-
-    &:hover {
-      background: rgba(0, 0, 0, 0.5);
-    }
   }
 }

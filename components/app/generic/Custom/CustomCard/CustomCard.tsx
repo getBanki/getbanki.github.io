@@ -12,7 +12,7 @@ export const CustomCard = ({loans}: IProps) => {
 
 
         return (
-            <div className="card custom-card  bg-base-100 shadow-xl">
+            <div className="card custom-card  bg-base-100 shadow-2xl">
                 <div className="card-body">
                     <CustomCardTitle dataLoans={loans}/>
                     <CustomCardDecr dataLoans={loans}/>

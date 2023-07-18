@@ -24,16 +24,16 @@ export const Panel = observer(() => {
             }
         ]
         return (
-            <div className='card rounded-lg panel '>
-                <div className='flex'>
+
+                <div className="join ">
                     {
                         dataPanel.map((data) => (
                             <Link smooth={true} to={data.nameAnchor} key={nanoid()}
-                                  className="btn panel__btn no-animation">{data.title}</Link>
+                                  className="join-item btn panel__btn">{data.title}</Link>
                         ))
                     }
                 </div>
-            </div>
+
         )
     }
 )

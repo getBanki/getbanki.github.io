@@ -21,7 +21,7 @@ export const PageLoans = observer(({allLoans}: IProps) => {
                 const matchTitle = obj.title.toLowerCase().includes(toolboxStateStore.valueSearchForm.toLowerCase());
                 const matchLoanAmount = obj.short_description.summa.maximum_loan_amount >= toolboxStateStore.valueRangeSumFrom ? obj : null
                 const matchLoanDay = obj.short_description.term.before >= toolboxStateStore.valueRangeDayFrom ? obj : null
-                const matchMethodObtaining = toolboxStateStore.valueMethodObtaining.length !== 0 ? obj.description.methods_obtaining.includes(toolboxStateStore.valueMethodObtaining) : obj
+                const matchMethodObtaining = toolboxStateStore.valueMethodObtaining.length !== 0 ? obj.description.payment_method.includes(toolboxStateStore.valueMethodObtaining) : obj
                 const matchDocuments = toolboxStateStore.valueDocuments.length !== 0 ? obj.description.borrower_requirements.documents.includes(toolboxStateStore.valueDocuments) : obj
                 const matchBorrowers = toolboxStateStore.valueCategoryBorrowers.length !== 0 ? obj.description.borrower_category.includes(toolboxStateStore.valueCategoryBorrowers) : obj
 
@@ -56,4 +56,3 @@ export const PageLoans = observer(({allLoans}: IProps) => {
         )
     }
 )
-

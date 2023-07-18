@@ -11,31 +11,27 @@ import {nanoid} from "nanoid";
 
 
 export const PageHome = observer(() => {
-const dataComponents = [
-    {
-        component:<ServiceBlock nameAnchor={'ServiceBlock'}/>,
-        title:'ServiceBlock'
-    },
-    {
-        component:<OpportunityBlock nameAnchor={'OpportunityBlock'}/>,
-        title:'OpportunityBlock'
-    },
-    {
-        component:<PartnerBlock nameAnchor={'PartnerBlock'}/>,
-        title:'PartnerBlock'
-    },
-]
+        const dataComponents = [
+            {
+                component: <ServiceBlock nameAnchor={'ServiceBlock'}/>,
+                title: 'ServiceBlock'
+            },
+            {
+                component: <OpportunityBlock nameAnchor={'OpportunityBlock'}/>,
+                title: 'OpportunityBlock'
+            },
+            {
+                component: <PartnerBlock nameAnchor={'PartnerBlock'}/>,
+                title: 'PartnerBlock'
+            },
+        ]
 
         return (
             <div className='page-home'>
-
-
-                <div className='page-home__block'>
-                    <AdBlock/>
-                </div>
+                <AdBlock/>
 
                 {
-                    dataComponents.map((d)=>(
+                    dataComponents.map((d) => (
                         <Element key={nanoid()} name={d.title}>
                             <div className='page-home__m'>
                                 {d.component}

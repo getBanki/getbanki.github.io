@@ -7,6 +7,8 @@ import {Logo} from "@/components/app/generic/Logo/Logo";
 import 'animate.css';
 import {Panel} from "@/components/app/pages/PageHome/Panel/Panel";
 import {observer} from "mobx-react-lite";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBasketShopping, faCartShopping, faNewspaper, faStar, faWallet} from "@fortawesome/free-solid-svg-icons";
 interface IProps {
     children: React.ReactNode
 }
@@ -18,14 +20,23 @@ export default observer(({children}: IProps) =>{
         {
             title: 'Займы',
             href: '/loans',
+            icon:  <FontAwesomeIcon
+                icon={faWallet}
+                className={pathName.includes('/loans')?'custom-icon_active':'custom-icon'}/>
         },
         {
             title: 'Кредитные карты',
             href: '/creditCard',
+            icon:  <FontAwesomeIcon
+                icon={faCartShopping}
+                className={pathName.includes('/creditCard')?'custom-icon_active':'custom-icon'}/>
         },
         {
             title: 'Статьи',
             href: '/newPaper',
+            icon:  <FontAwesomeIcon
+                icon={faNewspaper}
+                className={pathName.includes('/newPaper')?'custom-icon_active':'custom-icon'}/>
         },
     ]
 
@@ -61,7 +72,7 @@ export default observer(({children}: IProps) =>{
                             <li key={nanoid()}>
                                 <a className={`${pathName.includes(menu.href) ? 'active' : ''}`}
                                    href={menu.href} key={nanoid()}>
-                                    {menu.title}
+                                    {menu.icon} {menu.title}
                                 </a>
                             </li>
                         ))

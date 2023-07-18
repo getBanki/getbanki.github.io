@@ -1,9 +1,16 @@
+@use "../../../../app/globals";
 
 .page-loans {
   padding: 0 5rem 6rem 5rem;
+
   &__content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  }
+
+  &__text {
+    color: globals.$bg-color;
+    margin-left: 1rem;
   }
 
   &__img {
@@ -16,8 +23,9 @@
     align-items: center;
   }
 }
+
 @media all and (max-width: 1023px) {
-  .page-loans{
+  .page-loans {
     padding: 0;
   }
 }

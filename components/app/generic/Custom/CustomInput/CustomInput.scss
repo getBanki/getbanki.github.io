@@ -1,3 +1,11 @@
+@use "../../../../../app/globals";
 .custom-input{
   background: #f2f2f2 !important;
+  &:focus{
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 2px;
+    outline-color: globals.$bg-color-hover!important;
+    background: #ffffff !important
+  }
 }

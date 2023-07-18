@@ -13,6 +13,7 @@ export default observer(() => {
             toolboxStateStore.setValueRangeDayFrom(0)
             toolboxStateStore.setValueMethodObtaining('')
             toolboxStateStore.setValueDocuments('')
+            toolboxStateStore.setValueCategoryBorrowers('')
         }
 
 
@@ -24,7 +25,7 @@ export default observer(() => {
                     <InvisibleBlock/>
                     <div className='w-full text-right h-2'>
                         {
-                            toolboxStateStore.valueRangeSumFrom !== 0 || toolboxStateStore.valueRangeDayFrom !== 0 || toolboxStateStore.valueMethodObtaining.length !== 0 || toolboxStateStore.valueDocuments.length
+                            toolboxStateStore.valueCategoryBorrowers.length !== 0 || toolboxStateStore.valueRangeSumFrom !== 0 || toolboxStateStore.valueRangeDayFrom !== 0 || toolboxStateStore.valueMethodObtaining.length !== 0 || toolboxStateStore.valueDocuments.length
                             !== 0 ?
                                 <button onClick={clearForm}>Очистить</button>
                                 :
