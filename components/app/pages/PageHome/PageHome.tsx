@@ -6,7 +6,7 @@ import {Element} from "react-scroll";
 import {OpportunityBlock} from "@/components/app/pages/PageHome/OpportunityBlock/OpportunityBlock";
 import {ServiceBlock} from "@/components/app/pages/PageHome/ServiceBlock/ServiceBlock";
 import {PartnerBlock} from "@/components/app/pages/PageHome/PartnerBlock/PartnerBlock";
-import AdBlock from "@/components/app/pages/PageHome/AdBlock/AdBlock";
+import {AdBlock} from "@/components/app/pages/PageHome/AdBlock/AdBlock";
 import {nanoid} from "nanoid";
 
 
@@ -28,7 +28,6 @@ export const PageHome = observer(() => {
 
         return (
             <div className='page-home'>
-                    вфывфывфывыфвфвы
                 <AdBlock/>
 
                 {
