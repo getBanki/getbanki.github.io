@@ -28,6 +28,7 @@ export const PageHome = observer(() => {
 
         return (
             <div className='page-home'>
+                    вфывфывфывыфвфвы
                 <AdBlock/>
 
                 {
