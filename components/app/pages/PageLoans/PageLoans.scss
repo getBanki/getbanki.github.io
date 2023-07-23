@@ -1,11 +1,11 @@
 @use "../../../../app/globals";
 
 .page-loans {
-  padding: 0 5rem 6rem 5rem;
 
   &__content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+    gap: 2rem;
   }
 
   &__text {
@@ -21,6 +21,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media all and (min-width: 1023px) and (max-width: 1440px) {
+  .page-loans {
+
+    &__content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+      gap: 2rem;
+    }
   }
 }
 

@@ -16,7 +16,7 @@ interface IProps {
 
 export const PageLoans = observer(({allLoans}: IProps) => {
 
-         const filterVal = (array: AllLoans[]) => {
+        const filterVal = (array: AllLoans[]) => {
             return array.filter((obj: AllLoans) => {
                 const matchTitle = obj.title.toLowerCase().includes(toolboxStateStore.valueSearchForm.toLowerCase());
                 const matchLoanAmount = obj.short_description.summa.maximum_loan_amount >= toolboxStateStore.valueRangeSumFrom ? obj : null
@@ -35,9 +35,12 @@ export const PageLoans = observer(({allLoans}: IProps) => {
 
 
         return (
-            <div className='animation'>
+            <div className='animation page-content'>
                 <div className='page-loans'>
                     <Toolbox/>
+                    <div className='w-full text-right my-4'>
+                        Доступно {filterVal(allLoans).length} предложений
+                    </div>
                     <div className='page-loans__content '>
                         {
                             filterVal(allLoans).length !== 0 ?

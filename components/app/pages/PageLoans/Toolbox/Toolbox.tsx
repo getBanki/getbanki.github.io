@@ -19,7 +19,7 @@ export default observer(() => {
 
         return (
 
-            <div className='toolbox rounded-2xl bg-base-100 card mt-6 mb-3 shadow-md'>
+            <div className='toolbox rounded-2xl bg-base-100 card  shadow-sm'>
                 <div className='card-body'>
                     <VisibleBlock/>
                     <InvisibleBlock/>

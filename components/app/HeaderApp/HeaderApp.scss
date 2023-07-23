@@ -1,20 +1,38 @@
-@import "../../../app/globals";
+@use "../../../app/globals";
 
+$size: 20px;
+.header-app {
+  &__icon {
+    color: globals.$bg-color;
+
+    &_active {
+
+      color: white;
+    }
+  }
+}
 
 .menu {
   background-color: #F7F7F7 !important;
 }
-.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active){
-  background: $bg-color!important;
-  color: white!important;
+
+.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active) {
+  background: globals.$bg-color !important;
+  color: white !important;
 }
-.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active){
-  background: $bg-color-hover!important;
+
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active) {
+  background: globals.$bg-color-hover !important;
 }
+
 @media all and (max-width: 1023px) {
   .navbar-center {
     display: none;
   }
-
+  .drawer {
+    &-content {
+      padding: 0 !important;
+    }
+  }
 }
 

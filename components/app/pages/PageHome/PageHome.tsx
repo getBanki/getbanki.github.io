@@ -9,7 +9,6 @@ import {PartnerBlock} from "@/components/app/pages/PageHome/PartnerBlock/Partner
 import {AdBlock} from "@/components/app/pages/PageHome/AdBlock/AdBlock";
 import {nanoid} from "nanoid";
 
-
 export const PageHome = observer(() => {
         const dataComponents = [
             {

@@ -7,23 +7,14 @@ import {TableComparison} from "@/components/app/pages/PageComparison/TableCompar
 export const PageComparison = () => {
 
     return (
-
-
-        <>
-
-            <div className=' card page-comparison__text bg-base-100'>
+        <div className='page-comparison page-content'>
+            <div className=' card mb-4 bg-base-100'>
                 <div className='card-body'>
                     Сравнение условий финансовых продуктов
                     Сравните суммы, сроки, процентные ставки и другие параметры отмеченных вами финансовых продуктов.
                 </div>
             </div>
-            <div className=' card page-comparison__text bg-base-100'>
-                <div className='card-body'>
-                    <TableComparison/>
-                </div>
-            </div>
-        </>
-
-
+            <TableComparison/>
+        </div>
     )
 }

@@ -5,9 +5,7 @@ import {observer} from "mobx-react-lite";
 import toolboxStateStore from "@/components/app/lib/store/toolbox-state-store";
 import {CustomDropdown} from "@/components/app/generic/Custom/CustomDropdown/CustomDropdown";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFilter, faSliders} from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
-import './VisibleBlock.scss'
+import {faFilter} from "@fortawesome/free-solid-svg-icons";
 
 
 export default observer(() => {
@@ -20,7 +18,7 @@ export default observer(() => {
         return (
 
             <div className='toolbox__visible'>
-                <CustomInput title={'Поиск по МФО'}
+                <CustomInput title={'Найти'}
                              value={toolboxStateStore.valueSearchForm}
                              onChange={(e) => toolboxStateStore.setValueSearchForm(e.target.value)}/>
                 <CustomDropdown name={'Сумма'} title={`Сумма до ${toolboxStateStore.valueRangeSumFrom} ₽`}
@@ -35,7 +33,9 @@ export default observer(() => {
                             title={'Фильтр'} className={`btn ${state? 'btn-primary':''}`} >
                         <FontAwesomeIcon
                             icon={faFilter}
+                            width={50}
                             style={{marginRight: '0'}}
+
                         />
                     </button>
                 </div>
@@ -43,3 +43,5 @@ export default observer(() => {
         )
     }
 )
+
+

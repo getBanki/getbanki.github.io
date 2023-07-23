@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useLocalStorage} from "usehooks-ts";
 import {AllLoans} from "@/components/app/lib/models/all-loans";
 import {DeletingObjFromArray} from "@/components/app/lib/common";
-
+import './CustomCardTitle.scss'
 
 interface ICustomCard {
     dataLoans: AllLoans
@@ -74,7 +74,12 @@ export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
     return (
         <div className="card-title">
             <div className="card-title-body">
-                <img className="card-title-body-img" src={dataLoans.img} width={38} alt="займ  "/>
+            <a href={dataLoans.link} className='flex'>
+                <div className="avatar">
+                    <div className="w-16 rounded-2xl mr-2">
+                        <img  src={dataLoans.img}  alt={dataLoans.title} />
+                    </div>
+                </div>
                 <div>
                     <div>
                         {dataLoans.title}
@@ -83,7 +88,7 @@ export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
                         <FontAwesomeIcon
                             icon={faStar} style={{color: '#f48100'}}
                             className='custom-icon'/>
-                        <div className='card-title-body-rate-text'> {dataLoans.rate}</div>
+                        {dataLoans.rate}
                         <div className='ml-4 '>
                             {
                                 stateCheckCompare ?
@@ -106,11 +111,12 @@ export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
                         </div>
                     </div>
                 </div>
+            </a>
             </div>
             <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost m-1">
                     <FontAwesomeIcon
-                        icon={faEllipsis} style={{color: '#0C8CE9'}}/>
+                        icon={faEllipsis} className='custom-icon' style={{margin: '0'}}/>
                 </label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                     <li key={nanoid()}>

@@ -50,7 +50,7 @@ export const Comparison: React.FC = () => {
                         </div>
                         <div className='comparison-card-body-btn'>
                             <a onClick={clearing} className="btn  mr-4">Очистить</a>
-                            <a href={'/loans/comparison'} className="btn btn-primary mr-4">Сравнить</a>
+                            <a href={'/comparison'} className="btn btn-primary mr-4">Сравнить</a>
                         </div>
                     </div>
                 </div>
