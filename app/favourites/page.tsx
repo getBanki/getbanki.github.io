@@ -5,8 +5,6 @@ export default async function Favourites() {
 
 
     return (
-        <>
-          <PageFavourites/>
-        </>
+        <PageFavourites/>
     )
 }

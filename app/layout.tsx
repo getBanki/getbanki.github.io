@@ -13,13 +13,16 @@ const rubik = Rubik({
 interface IProps {
     children: React.ReactNode
 }
-
+export const metadata = {
+    title: "GB",
+    description: "Финансовый маркетплейс",
+    icons: {
+        icon: "/logo.svg",
+    },
+};
 export default function RootLayout({children}: IProps) {
     return (
         <html lang="ru" suppressHydrationWarning={true} data-theme="light">
-        <head>
-            <link rel="shortcut icon" href="/logo.svg" type="image/x-icon"/>
-        </head>
         <body className={rubik.className}>
         <HeaderApp>
             {children}

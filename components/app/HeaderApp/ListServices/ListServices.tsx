@@ -12,6 +12,7 @@ import {
     faWallet
 } from "@fortawesome/free-solid-svg-icons";
 import './ListServices.scss'
+import Link from 'next/link'
 
 
 export default observer(() => {
@@ -84,10 +85,11 @@ export default observer(() => {
                 {
                     MenuBtn.map((menu) => (
                         <li key={nanoid()}>
-                            <a className={`${pathName.includes(menu.href) ? 'active' : ''}`}
-                               href={menu.href}>
-                                {menu.icon} {menu.title}
-                            </a>
+                           <Link href={menu.href} className={`${pathName.includes(menu.href) ? 'active' : ''}`} passHref>
+
+                                   {menu.icon} {menu.title}
+
+                           </Link>
                         </li>
                     ))
                 }
@@ -96,10 +98,10 @@ export default observer(() => {
                 {
                     itemCategories.map((menu) => (
                         <li key={nanoid()}>
-                            <a className={`${pathName.includes(menu.href) ? 'active' : ''}`}
-                               href={menu.href}>
+                            <Link className={`${pathName.includes(menu.href) ? 'active' : ''}`}
+                               href={menu.href} passHref>
                                 {menu.icon} {menu.title}
-                            </a>
+                            </Link>
                         </li>
                     ))
                 }
