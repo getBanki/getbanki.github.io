@@ -4,12 +4,12 @@ import {AllLoans} from "@/components/app/lib/models/all-loans";
 
 interface IPageHomeStateStore {
     allLoans: AllLoans[]
-    selectedOffer: number
+    selectedOffer: any
 }
 
 class PageHomeStateStore implements IPageHomeStateStore {
     allLoans: AllLoans[] = []
-    selectedOffer = 0
+    selectedOffer = []
 
 
     constructor() {
@@ -20,7 +20,7 @@ class PageHomeStateStore implements IPageHomeStateStore {
         this.allLoans = val
     }
 
-    setSelectedOffer(val: number): void {
+    setSelectedOffer(val: any): void {
         this.selectedOffer = val
         console.log(1)
     }

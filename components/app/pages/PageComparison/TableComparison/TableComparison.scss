@@ -1,5 +1,7 @@
 .table-comparison {
-
+  max-width: 86vw;
+  max-height: 86vh;
+  margin: 0 auto;
 
   &::-webkit-scrollbar {
     width: 12px;
@@ -14,8 +16,12 @@
       --tw-bg-opacity: 0;
     }
   }
+
+  &__btn {
+    z-index: 220 !important;
+  }
 }
 
-.table :where(th, td){
+.table :where(th, td) {
   min-width: 12vw;
 }

@@ -4,62 +4,71 @@ import './TableComparison.scss'
 import {useLocalStorage} from "usehooks-ts";
 import {nanoid} from "nanoid";
 
-export const TableComparison = () => {
+interface IProps {
+    data?: any
+}
+
+export const TableComparison = ({data}: IProps) => {
 
     const [compareStorage] = useLocalStorage('compareStorage', [])
     const [dataCompare, setDataCompare] = useState<any>([])
-    const pus = (percent: number, number: number) => {
-        const arr: number[] = []
-        let i = number
-        while (i < 3000) {
-            i = i + Math.round((percent / 100) * i)
-            arr.push(i)
-        }
-        return arr
-    }
-
-    function sumArray(arr: any[]): number {
-        let sum = 0;
-        for (const item of arr) {
-            if (typeof item === 'number' && !isNaN(item)) {
-                sum += item;
-            } else if (Array.isArray(item)) {
-                sum += sumArray(item);
-            } else if (typeof item === 'string') {
-                const parsedNumber = parseFloat(item);
-                if (!isNaN(parsedNumber)) {
-                    sum += parsedNumber;
-                }
-            }
-        }
-        return sum;
-    }
+    // const pus = (percent: number, number: number) => {
+    //     const arr: number[] = []
+    //     let i = number
+    //     while (i < 3000) {
+    //         i = i + Math.round((percent / 100) * i)
+    //         arr.push(i)
+    //     }
+    //     return arr
+    // }
+    //
+    // function sumArray(arr: any[]): number {
+    //     let sum = 0;
+    //     for (const item of arr) {
+    //         if (typeof item === 'number' && !isNaN(item)) {
+    //             sum += item;
+    //         } else if (Array.isArray(item)) {
+    //             sum += sumArray(item);
+    //         } else if (typeof item === 'string') {
+    //             const parsedNumber = parseFloat(item);
+    //             if (!isNaN(parsedNumber)) {
+    //                 sum += parsedNumber;
+    //             }
+    //         }
+    //     }
+    //     return sum;
+    // }
 
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            setDataCompare(compareStorage)
+            if (data === undefined) {
+                setDataCompare(compareStorage)
+            } else {
+                setDataCompare(data)
+            }
+            console.log(data)
         }
-        let bob: number = 0
-        console.log(pus(40, 60).filter((d) => bob = bob + d))
-        console.log(bob)
-        const startTime = performance.now();
+        // let bob: number = 0
+        // console.log(pus(40, 60).filter((d) => bob = bob + d))
+        // console.log(bob)
+        // const startTime = performance.now();
         // console.log(sumArray([1, [1, [2]], 2]))
         // const endTime = performance.now();
         // const executionTime = endTime - startTime;
         // console.log(`Время выполнения: ${executionTime} мс`);
     }, [compareStorage])
-    const onOpenLink = (d: any) => {
-        console.log(d)
-    }
+    // const onOpenLink = (d: any) => {
+    //     console.log(d)
+    // }
     return (
-        <div className='table-comparison'>
+        <div>
             {
                 dataCompare.length !== 0 ?
                     <div className='card bg-base-100 '>
                         <div className='card-body'>
                             <div key={nanoid()}>
-                                <div className="overflow-x-auto">
+                                <div className="overflow-x-auto table-comparison">
                                     <table className="table table-comparison table-pin-rows table-pin-cols">
                                         {/* head */}
                                         <thead>
@@ -72,13 +81,18 @@ export const TableComparison = () => {
                                             <td>Возраст</td>
                                             <td>Документы</td>
                                             <td>Получить</td>
+                                            <td>Оплатить</td>
+                                            <td>Регистарция</td>
+                                            <td>Лицензия</td>
+                                            <td>Адрес</td>
+                                            <td>Телефон</td>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         {
                                             dataCompare.map((data: any) => (
                                                 <tr key={data.title}>
-                                                    <th className='z-100'>
+                                                    <th className='table-comparison__btn'>
                                                         <div className="avatar">
                                                             <div className="mask mask-squircle w-12">
                                                                 <img src={data.img}
@@ -88,7 +102,7 @@ export const TableComparison = () => {
                                                         <div> {data.title}</div>
                                                     </th>
                                                     <td>
-                                                        <div className=''>
+                                                        <div>
                                                             от {data.short_description.summa.minimum_loan_amount} - {data.short_description.summa.maximum_loan_amount} Руб
                                                             <br/>
                                                             <button className="btn btn-primary btn-xs">Оформить</button>
@@ -112,7 +126,7 @@ export const TableComparison = () => {
                                                         от {data.description.borrower_requirements.age.minimum_age} - {data.description.borrower_requirements.age.maximum_age} Лет
                                                     </td>
                                                     <td>
-                                                        <div className="dropdown dropdown-bottom">
+                                                        <div className="dropdown dropdown-bottom dropdown-hover">
                                                             <label tabIndex={0}
                                                                    className="btn m-1">{data.description.borrower_requirements.documents.length} вида
                                                                 документа</label>
@@ -126,8 +140,23 @@ export const TableComparison = () => {
                                                             </ul>
                                                         </div>
                                                     </td>
+                                                    <td>
+                                                        <div className="dropdown dropdown-bottom dropdown-hover">
+                                                            <label tabIndex={0}
+                                                                   className="btn m-1 ">{data.description.borrower_requirements.documents.length} вида
+                                                                документа</label>
+                                                            <ul tabIndex={0}
+                                                                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 no-animation">
+                                                                {data.description.payment_method.map((d: any) => (
+                                                                    <li key={nanoid()}>
+                                                                        {d}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    </td>
                                                     <td key={nanoid()}>
-                                                        <div className="dropdown dropdown-bottom">
+                                                        <div className="dropdown dropdown-bottom dropdown-hover">
                                                             <label tabIndex={0}
                                                                    className="btn m-1">{data.description.methods_obtaining.length} способов</label>
                                                             <ul tabIndex={0}
@@ -139,6 +168,18 @@ export const TableComparison = () => {
                                                                 ))}
                                                             </ul>
                                                         </div>
+                                                    </td>
+                                                    <td key={nanoid()}>
+                                                        {data.description.borrower_requirements.registration}
+                                                    </td>
+                                                    <td key={nanoid()}>
+                                                        {data.organization_information.license}
+                                                    </td>
+                                                    <td key={nanoid()}>
+                                                        {data.organization_information.address}
+                                                    </td>
+                                                    <td key={nanoid()}>
+                                                        {data.organization_information.telephone}
                                                     </td>
                                                 </tr>
                                             ))
@@ -156,90 +197,5 @@ export const TableComparison = () => {
                     </div>
             }
         </div>
-
-
-        //         <tr>
-        //             <th>Регистарция</th>
-        //             {
-        //                 dataCompare.map((data: any) => (
-        //                     <td key={nanoid()}>
-        //                         <div>
-        //                             {data.description.borrower_requirements.registration}
-        //                         </div>
-        //                     </td>
-        //                 ))
-        //             }
-        //         </tr>
-        //         <tr>
-        //             <th>Получить</th>
-        //             {
-        //                 dataCompare.map((data: any) => (
-        //                     <td key={nanoid()}>
-        //                         <div>
-        //                             {data.description.methods_obtaining.map((d: any) => (
-        //                                 <li key={nanoid()}>
-        //                                     {d}
-        //                                 </li>
-        //                             ))}
-        //                         </div>
-        //                     </td>
-        //                 ))
-        //             }
-        //         </tr>
-        //         <tr>
-        //             <th>Оплатить</th>
-        //             {
-        //                 dataCompare.map((data: any) => (
-        //                     <td key={nanoid()}>
-        //                         <div>
-        //                             {data.description.payment_method.map((d: any) => (
-        //                                 <li key={nanoid()}>
-        //                                     {d}
-        //                                 </li>
-        //                             ))}
-        //                         </div>
-        //                     </td>
-        //                 ))
-        //             }
-        //         </tr>
-        //         <tr>
-        //             <th>Лицензия</th>
-        //             {
-        //                 dataCompare.map((data: any) => (
-        //                     <td key={nanoid()}>
-        //                         <div>
-        //                             {data.organization_information.license}
-        //                         </div>
-        //                     </td>
-        //                 ))
-        //             }
-        //         </tr>
-        //         <tr>
-        //             <th>Адресс</th>
-        //             {
-        //                 dataCompare.map((data: any) => (
-        //                     <td key={nanoid()}>
-        //                         <div>
-        //                             {data.organization_information.address}
-        //                         </div>
-        //                     </td>
-        //                 ))
-        //             }
-        //         </tr>
-        //         <tr>
-        //             <th>Телефон</th>
-        //             {
-        //                 dataCompare.map((data: any) => (
-        //                     <td key={nanoid()}>
-        //                         <div>
-        //                             {data.organization_information.telephone}
-        //                         </div>
-        //                     </td>
-        //                 ))
-        //             }
-        //         </tr>
-        //         </tbody>
-        //     </table>
-        // </div>
     )
 }

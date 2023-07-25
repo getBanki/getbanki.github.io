@@ -236,3 +236,9 @@ html {
     margin: 1rem 0;
   }
 }
+
+@media (min-width: 320px) and (max-width: 1023px){
+  .page-content {
+    padding: 0 !important;
+  }
+}

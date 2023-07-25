@@ -1,0 +1,10 @@
+.page-add-cards {
+  max-width: 86vw;
+
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+    gap: 2rem;
+  }
+}

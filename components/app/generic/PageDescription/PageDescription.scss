@@ -1,0 +1,13 @@
+.page-description{
+  &__body{
+    display: flex;
+  }
+  &__desc{
+    //max-width: 60vw;
+    //margin-right: 5rem;
+  }
+  &__title{
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}

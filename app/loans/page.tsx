@@ -8,11 +8,11 @@ import {PageLoans} from "@/components/app/pages/PageLoans/PageLoans";
 
 
 export const metadata = {
-    title: 'Займы',
+    title: 'GetBanki | Займы',
     description: 'Займ под 0%',
 }
 
-export default async function Home() {
+export default async function Loans() {
     const allLoans = await getAllLoan()
 
     return (

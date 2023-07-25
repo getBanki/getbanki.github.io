@@ -6,12 +6,15 @@ import {useLocalStorage} from "usehooks-ts";
 import {AllLoans} from "@/components/app/lib/models/all-loans";
 import {DeletingObjFromArray} from "@/components/app/lib/common";
 import './CustomCardTitle.scss'
+import Link from 'next/link'
+import pageHomeStateStore from "@/components/app/lib/store/page-home-state-store";
+import {observer} from "mobx-react-lite";
 
 interface ICustomCard {
     dataLoans: AllLoans
 }
 
-export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
+export const CustomCardTitle = observer(({dataLoans}: ICustomCard) => {
     const [stateCheckCompare, setStateCheckCompare] = useState(false)
     const [stateCheckFavorites, setStateCheckFavorites] = useState(false)
     const [compareStorage, setCompareStorage] = useLocalStorage<any>('compareStorage', [])
@@ -43,6 +46,9 @@ export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
         })
         setStateCheckFavorites(false)
 
+    }
+    const x = () => {
+       pageHomeStateStore.setSelectedOffer(dataLoans)
     }
 
     useEffect(() => {
@@ -120,12 +126,12 @@ export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
                 </label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                     <li key={nanoid()}>
-                        <a href={'/loans/detailed'}>
+                        <Link href={'/loans/detailed'} onClick={x}>
                             <FontAwesomeIcon
                                 icon={faGlasses}
                                 className='custom-icon'/>
                             Подробнее
-                        </a>
+                        </Link>
                     </li>
                     <li key={nanoid()}>
                         <a onClick={stateCheckCompare ? deleteItem : compare}>
@@ -150,4 +156,4 @@ export const CustomCardTitle = ({dataLoans}: ICustomCard) => {
             </div>
         </div>
     )
-}
+})

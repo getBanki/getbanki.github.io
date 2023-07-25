@@ -8,6 +8,7 @@ import toolboxStateStore from "@/components/app/lib/store/toolbox-state-store";
 import {CustomCard} from "@/components/app/generic/Custom/CustomCard/CustomCard";
 import Image from "next/image";
 import Toolbox from "@/components/app/pages/PageLoans/Toolbox/Toolbox";
+import {PageDescription} from "@/components/app/generic/PageDescription/PageDescription";
 
 
 interface IProps {
@@ -37,6 +38,12 @@ export const PageLoans = observer(({allLoans}: IProps) => {
         return (
             <div className='animation page-content'>
                 <div className='page-loans'>
+                    <PageDescription title={'Займы'}
+                                     desc={'Оформление займа онлайн у нас – это удобство и безопасность. Наш онлайн-сервис работает 24/7, что позволяет отправить заявку в любое удобное для вас время. Минимум формальностей, максимум выгоды!'}
+                                     img={'/loans_robot.svg'}
+                                     width={123}
+                                     height={158}
+                    />
                     <Toolbox/>
                     <div className='w-full text-right my-4'>
                         Доступно {filterVal(allLoans).length} предложений
