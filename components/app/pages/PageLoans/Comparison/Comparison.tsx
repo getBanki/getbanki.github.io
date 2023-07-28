@@ -5,9 +5,11 @@ import {AllLoans} from "@/components/app/lib/models/all-loans";
 import './Comparison.scss'
 import {useLocalStorage} from "usehooks-ts";
 import pageHomeStateStore from "@/components/app/lib/store/page-home-state-store";
+import Link from "next/link";
+import {observer} from "mobx-react-lite";
 
 
-export const Comparison: React.FC = () => {
+export const Comparison: React.FC = observer(() => {
     const [compareStorage, setCompareStorage] = useLocalStorage<AllLoans[]>('compareStorage', [])
     const [dataCompare, setDataCompare] = useState<AllLoans[]>([])
 
@@ -50,7 +52,7 @@ export const Comparison: React.FC = () => {
                         </div>
                         <div className='comparison-card-body-btn'>
                             <a onClick={clearing} className="btn  mr-4">Очистить</a>
-                            <a href={'/comparison'} className="btn btn-primary mr-4">Сравнить</a>
+                            <Link href={'/comparison'} className="btn btn-primary mr-4">Сравнить</Link>
                         </div>
                     </div>
                 </div>
@@ -58,5 +60,5 @@ export const Comparison: React.FC = () => {
             :
             null
     )
-}
+})
 

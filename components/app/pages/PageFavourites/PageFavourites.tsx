@@ -5,9 +5,11 @@ import './PageFavourites.scss'
 import {CustomCard} from "@/components/app/generic/Custom/CustomCard/CustomCard";
 import Image from "next/image";
 import {useLocalStorage} from "usehooks-ts";
+import {AllLoans} from "@/components/app/lib/models/all-loans";
+import {nanoid} from "nanoid";
 
 export const PageFavourites = observer(() => {
-        const [state, setState] = useState<any>([])
+        const [state, setState] = useState<AllLoans[]>([])
         const [favoritesStorage] = useLocalStorage<any>('favoritesStorage', [])
         useEffect(() => {
             if (favoritesStorage) {
@@ -22,11 +24,11 @@ export const PageFavourites = observer(() => {
                 <div className='page-favourites__content '>
                     {
                         state.length !== 0 ?
-                            state.map((loans: any) => (
-                                <CustomCard fav={true} key={loans.title} loans={loans}/>
+                            state.map((loans) => (
+                                <CustomCard fav={true} key={nanoid()} loans={loans}/>
                             ))
                             :
-                            <div className='page-loans-content__img'>
+                            <div className=' page-favourites__img'>
                                 <Image width={200} height={200} src={'/robot-sad.png'} alt={'d'}/>
                                 Увы, ничего не найдено
                             </div>

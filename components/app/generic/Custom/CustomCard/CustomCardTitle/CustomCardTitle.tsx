@@ -1,5 +1,5 @@
 import {nanoid} from "nanoid";
-import React, {useEffect, useState} from "react";
+import React, {memo, useEffect, useState} from "react";
 import {faChartSimple, faEllipsis, faGlasses, faStar, faHeart} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useLocalStorage} from "usehooks-ts";
@@ -8,13 +8,13 @@ import {DeletingObjFromArray} from "@/components/app/lib/common";
 import './CustomCardTitle.scss'
 import Link from 'next/link'
 import pageHomeStateStore from "@/components/app/lib/store/page-home-state-store";
-import {observer} from "mobx-react-lite";
+
 
 interface ICustomCard {
     dataLoans: AllLoans
 }
 
-export const CustomCardTitle = observer(({dataLoans}: ICustomCard) => {
+export const CustomCardTitle = memo(({dataLoans}: ICustomCard) => {
     const [stateCheckCompare, setStateCheckCompare] = useState(false)
     const [stateCheckFavorites, setStateCheckFavorites] = useState(false)
     const [compareStorage, setCompareStorage] = useLocalStorage<any>('compareStorage', [])
@@ -157,3 +157,4 @@ export const CustomCardTitle = observer(({dataLoans}: ICustomCard) => {
         </div>
     )
 })
+CustomCardTitle.displayName = 'CustomCardTitle'
