@@ -9,6 +9,7 @@ import {CustomCard} from "@/components/app/generic/Custom/CustomCard/CustomCard"
 import Image from "next/image";
 import Toolbox from "@/components/app/pages/PageLoans/Toolbox/Toolbox";
 import {PageDescription} from "@/components/app/generic/PageDescription/PageDescription";
+import {Comparison} from "@/components/app/pages/PageLoans/Comparison/Comparison";
 
 
 interface IProps {

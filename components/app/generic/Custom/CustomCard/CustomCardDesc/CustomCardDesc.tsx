@@ -15,22 +15,22 @@ export const CustomCardDecr = memo(({dataLoans}: ICustomCard) => {
         return (
             <div className='card-desc'>
 
-                <div key={nanoid()}>
-                    <div key={nanoid()} className='card-desc-text bg-base-200 '>
+                <div>
+                    <div className='card-desc-text bg-base-200 '>
                         <FontAwesomeIcon
                             role='img'
                             className='custom-icon '
                             icon={faCoins}/>
                         От {desc.summa.minimum_loan_amount} до {desc.summa.maximum_loan_amount} Руб.
                     </div>
-                    <div key={nanoid()} className='card-desc-text bg-base-200'>
+                    <div className='card-desc-text bg-base-200'>
                         <FontAwesomeIcon
                             role='img'
                             className='custom-icon '
                             icon={faPercent}/>
                         От {desc.percent.minimum_loan_interest} до {desc.percent.maximum_loan_interest} %.
                     </div>
-                    <div key={nanoid()} className='card-desc-text bg-base-200'>
+                    <div  className='card-desc-text bg-base-200'>
                         <FontAwesomeIcon
                             role='img'
                             className='custom-icon '

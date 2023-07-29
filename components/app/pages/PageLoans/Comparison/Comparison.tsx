@@ -24,13 +24,13 @@ export const Comparison: React.FC = observer(() => {
     return (
 
         dataCompare.length !== 0 ?
-            <div key={nanoid()} className='comparison animation'>
+            <div  className='comparison animation'>
                 <div className='card comparison__card'>
                     <div className='comparison__body'>
                         <div className='comparison__information'>
-                            <div key={nanoid()} className="avatar comparison__item">
+                            <div  className="avatar comparison__item">
                                 <div className="w-12 rounded-xl">
-                                    <img width={50} height={50} key={nanoid()} src={dataCompare[0].img}
+                                    <img width={50} height={50}  src={dataCompare[0].img}
                                          alt={dataCompare[0].title}/>
                                 </div>
                             </div>

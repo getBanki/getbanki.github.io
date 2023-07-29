@@ -125,7 +125,7 @@ export const CustomCardTitle = memo(({dataLoans}: ICustomCard) => {
                         icon={faEllipsis} className='custom-icon' style={{margin: '0'}}/>
                 </label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li key={nanoid()}>
+                    <li>
                         <Link href={'/loans/detailed'} onClick={x}>
                             <FontAwesomeIcon
                                 icon={faGlasses}
@@ -133,7 +133,7 @@ export const CustomCardTitle = memo(({dataLoans}: ICustomCard) => {
                             Подробнее
                         </Link>
                     </li>
-                    <li key={nanoid()}>
+                    <li>
                         <a onClick={stateCheckCompare ? deleteItem : compare}>
                             <FontAwesomeIcon
                                 icon={faChartSimple}
