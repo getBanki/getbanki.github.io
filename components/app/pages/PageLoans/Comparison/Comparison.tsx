@@ -4,7 +4,6 @@ import {nanoid} from "nanoid";
 import {AllLoans} from "@/components/app/lib/models/all-loans";
 import './Comparison.scss'
 import {useLocalStorage} from "usehooks-ts";
-import pageHomeStateStore from "@/components/app/lib/store/page-home-state-store";
 import Link from "next/link";
 import {observer} from "mobx-react-lite";
 
