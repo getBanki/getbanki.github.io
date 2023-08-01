@@ -1,4 +1,3 @@
-import {nanoid} from "nanoid";
 import React, {memo, useEffect, useState} from "react";
 import {faChartSimple, faEllipsis, faGlasses, faStar, faHeart} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";

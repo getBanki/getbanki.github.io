@@ -13,6 +13,7 @@
 }
 @media all and (max-width: 767px) {
   .toolbox {
+    text-align: right;
     &__visible,&__invisible {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));

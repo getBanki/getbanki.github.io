@@ -1,6 +1,5 @@
 "use client"
 import React, {useEffect, useState} from "react";
-import {nanoid} from "nanoid";
 import {AllLoans} from "@/components/app/lib/models/all-loans";
 import './Comparison.scss'
 import {useLocalStorage} from "usehooks-ts";

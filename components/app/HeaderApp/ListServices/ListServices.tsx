@@ -64,7 +64,7 @@ export default observer(() => {
     ]
     const itemCategories = [
         {
-            title: 'Избанное',
+            title: 'Избранное',
             href: '/favourites',
             icon: <FontAwesomeIcon icon={faHeart}
                                    className={`${pathName.includes('/favourites') ? 'header-app__icon_active' : 'header-app__icon'}`}
