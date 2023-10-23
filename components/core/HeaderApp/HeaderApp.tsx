@@ -41,9 +41,9 @@ export default observer(({children}: IProps) => {
                 </div>
                 {children}
             </div>
-            <div className="drawer-side bg-white z-50">
+            <div className="drawer-side  z-50">
                 <label htmlFor="my-drawer" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-64 h-full ">
+                <ul className="menu p-4 w-64 bg-white h-full ">
                     <Logo/>
                     <ListServices/>
                 </ul>

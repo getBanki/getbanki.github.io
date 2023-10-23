@@ -13,14 +13,14 @@ $size: 20px;
 
 
 
-.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active) {
-  background: variables.$bg-color !important;
-  color: white !important;
-}
-
-.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active) {
-  background: variables.$bg-color-hover !important;
-}
+//.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active) {
+//  background: variables.$bg-color !important;
+//  color: white !important;
+//}
+//
+//.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active) {
+//  background: variables.$bg-color-hover !important;
+//}
 
 @media all and (max-width: 1023px) {
   .navbar-center {

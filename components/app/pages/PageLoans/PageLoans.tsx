@@ -20,7 +20,7 @@ export const PageLoans = observer(({allLoans}: IProps) => {
 
         const filterVal = (array: AllLoans[]) => {
             return array.filter((obj: AllLoans) => {
-                const matchTitle = obj.title.toLowerCase().includes(toolboxStateStore.valueSearchForm.toLowerCase());
+                const matchTitle = obj.title.toLowerCase().startsWith(toolboxStateStore.valueSearchForm.toLowerCase());
                 const matchLoanAmount = obj.short_description.summa.maximum_loan_amount >= toolboxStateStore.valueRangeSumFrom ? obj : null
                 const matchLoanDay = obj.short_description.term.before >= toolboxStateStore.valueRangeDayFrom ? obj : null
                 const matchMethodObtaining = toolboxStateStore.valueMethodObtaining.length !== 0 ? obj.description.payment_method.includes(toolboxStateStore.valueMethodObtaining) : obj
