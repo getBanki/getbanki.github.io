@@ -1,6 +1,7 @@
 import './globals.scss'
+import '../components/core/App.scss'
 import {Rubik} from 'next/font/google'
-import HeaderApp from "@/components/app/HeaderApp/HeaderApp";
+import HeaderApp from "@/components/core/HeaderApp/HeaderApp";
 import React from "react";
 
 const rubik = Rubik({

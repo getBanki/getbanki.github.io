@@ -21,23 +21,7 @@ export const TableComparison = ({data}: IProps) => {
     //     }
     //     return arr
     // }
-    //
-    // function sumArray(arr: any[]): number {
-    //     let sum = 0;
-    //     for (const item of arr) {
-    //         if (typeof item === 'number' && !isNaN(item)) {
-    //             sum += item;
-    //         } else if (Array.isArray(item)) {
-    //             sum += sumArray(item);
-    //         } else if (typeof item === 'string') {
-    //             const parsedNumber = parseFloat(item);
-    //             if (!isNaN(parsedNumber)) {
-    //                 sum += parsedNumber;
-    //             }
-    //         }
-    //     }
-    //     return sum;
-    // }
+
 
 
     useEffect(() => {

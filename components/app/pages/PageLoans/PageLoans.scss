@@ -1,4 +1,4 @@
-@use "../../../../app/globals";
+@use "../../../../app/variables";
 
 .page-loans {
 
@@ -9,7 +9,7 @@
   }
 
   &__text {
-    color: globals.$bg-color;
+    color: variables.$bg-color;
     margin-left: 1rem;
   }
 

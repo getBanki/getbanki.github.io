@@ -1,11 +1,11 @@
-@use "app/globals";
+@use "app/variables";
 .custom-dropdown {
   &__btn {
     border-color: hsl(var(--b2) / var(--tw-border-opacity)) !important;
     background: hsl(var(--b2) / var(--tw-border-opacity)) !important;
     font-weight: normal !important;
     &:hover{
-      background: globals.$bg-color-hover!important;
+      background: variables.$bg-color-hover!important;
       color: white;
     }
   }

@@ -13,7 +13,7 @@ export const CustomCard = ({loans,fav}: IProps) => {
 
 
     return (
-        <div className="card hover:shadow-xl duration-500 bg-base-100 shadow-sm">
+        <div className="card custom-card duration-500 bg-base-100 shadow-sm">
             <div className="card-body">
                 <CustomCardTitle dataLoans={loans}/>
                 {
